@@ -1,3 +1,5 @@
+import "../main.css"
+
 export function RedCard({ title, image, text }) {
   return (
     <div className="card">
