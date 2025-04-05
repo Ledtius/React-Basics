@@ -1,18 +1,11 @@
-// import reactImg from "./assets/react.svg";
-
-export function Card({ name }) {
+export function RedCard({ title, image, text }) {
   return (
     <div className="card">
-      <img className="card__img" src={reactImg} alt="React Img" />
-      <div className="card__details">
-        <h1 className="card__title">{name}</h1>
-        <p className="card__description">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque
-          voluptates minus repellat, dicta velit et. Natus ad quos ea
-          reiciendis, sed magnam repellendus voluptas, alias vitae accusantium
-          aliquam reprehenderit laborum.
-        </p>
-      </div>
+      <img className="card__img" src={image} alt="Red Girl 1" />
+      <section className="card__information">
+        <h2 className="card__title">{title}</h2>
+        <p className="card__description">{text}</p>
+      </section>
     </div>
   );
 }
