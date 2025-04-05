@@ -7,6 +7,21 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+#Archivos de entorno
+.env
+.env.local
+.env*.local
+
+#Vite
+.vite
+
+# Cache
+eslintcache
+
+#Windows
+Thumbs.db
+desktop.ini
+
 node_modules
 dist
 dist-ssr
