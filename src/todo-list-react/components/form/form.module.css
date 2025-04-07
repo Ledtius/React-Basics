@@ -1,0 +1,21 @@
+.todo-list__bar {
+  background-color: rgb(0, 255, 213);
+  /* width: fit-content; */
+  display: flex;
+  justify-content: center;
+}
+.todo-list__bar-input {
+  height: 4rem;
+  text-align: center;
+  border-radius: 2rem;
+  outline: none;
+  /* box-shadow: ; */
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.849);
+
+}
+.todo-list__bar-button {
+}
+
+.title {
+  color: blue;
+}
