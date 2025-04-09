@@ -15,7 +15,13 @@ body {
   padding: 0;
   font-size: 1.6rem;
   line-height: 1.5;
-  background-color: #161a1e;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 2rem;
+  min-width: 320px;
+  background-color: #000036;
 }
 
 h1 {
@@ -34,19 +40,20 @@ h4 {
   font-size: 2rem;
 }
 
-.cards__container {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  align-items: center;
-  padding: 2rem;
-  
+:root {
+  --todo-list-primary: #000036;
+  --todo-list-secondary: #63e6be;
+  --todo-list-tertiary: white;
+  --todo-list-shadow: 0 4px 1px rgb(177, 177, 177);
 }
 
-@media (min-width: 1024px) {
-  .cards__container {
-    flex-direction: row;
-    justify-content: center;
-    transition: flex-direction 1s ease;
-  }
+.todo-list {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: fit-content;
+}
+
+.todo-list__title {
+  color: var(--todo-list-secondary);
 }
