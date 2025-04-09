@@ -1,21 +1,32 @@
 .todo-list__bar {
-  background-color: rgb(0, 255, 213);
-  /* width: fit-content; */
   display: flex;
   justify-content: center;
+  position: relative;
+  width: fit-content;
 }
+
 .todo-list__bar-input {
   height: 4rem;
-  text-align: center;
-  border-radius: 2rem;
+  padding-left: 2rem;
+  border-radius: 1.5rem;
   outline: none;
-  /* box-shadow: ; */
-  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.849);
-
+  width: clamp(233px, 70vw, 326px);
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.267);
+  border: 1px solid grey;
+  padding-right: 7rem;
+  box-shadow: var(--todo-list-shadow);
 }
+
 .todo-list__bar-button {
-}
-
-.title {
-  color: blue;
+  height: 4rem;
+  border-radius: 1.5rem;
+  padding: 1rem;
+  border: 1px solid black;
+  font-weight: 700;
+  cursor: pointer;
+  position: absolute;
+  right: 0.1px;
+  background-color: var(--todo-list-secondary);
+  border: none;
+  box-shadow: var(--todo-list-shadow);
 }
