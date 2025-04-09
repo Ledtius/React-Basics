@@ -11,7 +11,6 @@ export function FormTodoList() {
         type="text"
         placeholder="Digita tu tarea del dia"
       />
-
       <button className={formStyles["todo-list__bar-button"]} type="button">
         Añadir
       </button>
