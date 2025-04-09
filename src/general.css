@@ -57,3 +57,7 @@ h4 {
 .todo-list__title {
   color: var(--todo-list-secondary);
 }
+
+.todo-list__content{
+  
+}
