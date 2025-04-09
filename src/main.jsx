@@ -7,6 +7,9 @@ import "./general.css";
 
 const root = createRoot(document.getElementById("root")).render(
   <>
-    <FormTodoList />
+    <div className="todo-list">
+      <h1 className="todo-list__title">Lista de tareas</h1>
+      <FormTodoList />
+    </div>
   </>
 );
