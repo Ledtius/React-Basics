@@ -12,20 +12,28 @@ export function ItemList() {
           name="checkTask"
           id="check"
         />
-        <label className="todo-list__task" htmlFor="check">
+        <label className={itemStyles["todo-list__task"]} htmlFor="check">
           Nombre de la tarea
         </label>
       </div>
-      <div className="todo-list__options">
-        <button className="todo-list__edit">
+      <div className={itemStyles["todo-list__options"]}>
+        <button
+          className={`${itemStyles["todo-list__button"]} ${itemStyles["todo-list__button--edit"]}`}
+        >
           <Pencil
             className={itemStyles["todo-list__icon todo-list__icon--edit  "]}
             color="red"
-            size={50}
+            size={25}
           />
         </button>
-        <button className={itemStyles["todo-list__icon todo-list__icon--edit"]}>
-          <Trash2 />
+        <button
+          className={`${itemStyles["todo-list__button"]} ${itemStyles["todo-list__button--delete"]}`}
+        >
+          <Trash2
+            className={itemStyles["todo-list__icon todo-list__icon--delete  "]}
+            color="red"
+            size={25}
+          />
         </button>
       </div>
     </div>

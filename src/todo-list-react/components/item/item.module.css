@@ -1,3 +1,59 @@
 .todo-list__element {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #000050;
+  padding: 2rem;
+  gap: 1rem;
+  width: clamp(233px, 70vw, 326px);
+  border-radius: 2rem;
+  border: 1px solid #63e6bf96;
+  /* box-shadow: 0px 1px 5px #fcfcfc96; */
+  box-shadow: 0 9px 1px rgba(177, 177, 177, 0.89);
+}
+
+.todo-list__check-task {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+}
+
+.todo-list__check {
+  
+}
+
+.todo-list__task {
   color: red;
+  cursor: pointer;
+}
+
+.todo-list__options {
+  display: flex;
+  align-items: center;
+  /* gap: 1rem; */
+}
+.todo-list__button {
+  cursor: pointer;
+  border: 1px solid transparent;
+  background-color: transparent;
+  transition: transform 0.5s ease;
+}
+
+.todo-list__button:hover {
+  transform: scale(1.1);
+}
+
+.todo-list__button--edit {
+  /* border-radius: 2rem; */
+}
+
+.todo-list__icon--edit {
+}
+
+.todo-list__button--delete {
+  /* border-radius: 2rem; */
+}
+
+.todo-list__icon--delete {
 }
