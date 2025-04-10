@@ -3,6 +3,7 @@
   justify-content: center;
   position: relative;
   width: fit-content;
+  margin: 2rem;
 }
 
 .todo-list__bar-input {
