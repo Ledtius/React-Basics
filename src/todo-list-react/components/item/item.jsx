@@ -22,8 +22,8 @@ export function ItemList() {
         >
           <Pencil
             className={itemStyles["todo-list__icon todo-list__icon--edit  "]}
-            color="red"
-            size={25}
+            color="white"
+            size={20}
           />
         </button>
         <button
@@ -31,8 +31,8 @@ export function ItemList() {
         >
           <Trash2
             className={itemStyles["todo-list__icon todo-list__icon--delete  "]}
-            color="red"
-            size={25}
+            color="white"
+            size={20}
           />
         </button>
       </div>
