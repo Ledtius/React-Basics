@@ -15,7 +15,7 @@ const root = createRoot(document.getElementById("root")).render(
       <FormTodoList />
     </div>
     <div className="todo-list__content">
-      <ItemList />
+      <ItemList taskName="Tarea componetizada" />
     </div>
   </>
 );
