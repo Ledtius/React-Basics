@@ -2,7 +2,7 @@ import itemStyles from "./item.module.css";
 
 import { Pencil, Trash2 } from "lucide-react";
 
-export function ItemList({ taskName }) {
+export function ItemList({ taskName, id }) {
   return (
     <div className={itemStyles["todo-list__element"]}>
       <div className={itemStyles["todo-list__check-task"]}>
@@ -10,9 +10,9 @@ export function ItemList({ taskName }) {
           className={itemStyles["todo-list__check"]}
           type="checkbox"
           name="checkTask"
-          id="check"
+          id={id}
         />
-        <label className={itemStyles["todo-list__task"]} htmlFor="check">
+        <label className={itemStyles["todo-list__task"]} htmlFor={id}>
           {taskName}
         </label>
       </div>
