@@ -17,7 +17,7 @@ const root = createRoot(document.getElementById("root")).render(
     <div className="todo-list__content">
       {/* <ItemList taskName="Tarea componetizada" /> */}
       <ItemList taskName="Tarea componetizada" id="1" />
-      <ItemList taskName="Tarea componetizada" id="2" />
+      <ItemList taskName="Tarea componetizadasdsddd 23" id="2" />
     </div>
   </>
 );
