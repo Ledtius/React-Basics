@@ -10,14 +10,20 @@ import "./general.css";
 
 const root = createRoot(document.getElementById("root")).render(
   <>
+
+    
+    {/* Todo-list */}
+
+    {/* 
+  
     <div className="todo-list">
       <h1 className="todo-list__title">Lista de tareas</h1>
       <FormTodoList />
     </div>
     <div className="todo-list__content">
-      {/* <ItemList taskName="Tarea componetizada" /> */}
       <ItemList taskName="Tarea componetizada" id="1" />
       <ItemList taskName="Tarea componetizadasdsddd 23" id="2" />
     </div>
+      */}
   </>
 );
