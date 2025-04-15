@@ -6,10 +6,25 @@ console.log(formStyles);
 
 export function FormTodoList() {
   const [text, setText] = useState("");
+  const [click, setClick] = useState(false);
+
+  let arrayTask = [];
+  let textValue = "";
+  let taskName = "";
 
   const handleInputChange = (e) => {
-    setText(e.target.value);
     console.log(e.target.value);
+    const value = e.target.value;
+    textValue += value;
+    console.log(textValue);
+    return textValue;
+  };
+
+  const handleClickForm = () => {
+    setClick(!click);
+    taskName = handleInputChange();
+    arrayTask.push(taskName);
+    console.log(arrayTask);
   };
 
   return (
@@ -18,10 +33,14 @@ export function FormTodoList() {
         className={formStyles["todo-list__bar-input"]}
         type="text"
         placeholder="Digita tu tarea del dia"
-        onInput={handleInputChange}
+        onInput={handleClickForm ? handleClickForm : none}
         value={text}
       />
-      <button className={formStyles["todo-list__bar-button"]} type="button">
+      <button
+        className={formStyles["todo-list__bar-button"]}
+        type="button"
+        onClick={handleClickForm}
+      >
         Añadir
       </button>
     </form>
