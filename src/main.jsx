@@ -8,10 +8,12 @@ import { ItemList } from "./todo-list-react/components/item/item.jsx";
 
 import "./general.css";
 
+import { GreetingsComponent } from "./fundamentals/greeting/greeting.jsx";
+
 const root = createRoot(document.getElementById("root")).render(
   <>
+    <GreetingsComponent greeting="Ejercicio numero 1 cumplido" />
 
-    
     {/* Todo-list */}
 
     {/* 
