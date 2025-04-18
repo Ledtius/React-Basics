@@ -10,9 +10,14 @@ import "./general.css";
 
 import { GreetingsComponent } from "./fundamentals/greeting/greeting.jsx";
 
+import { CounterComponent } from "./fundamentals/counter/counter.jsx";
+
 const root = createRoot(document.getElementById("root")).render(
   <>
-    <GreetingsComponent greeting="Ejercicio numero 1 cumplido" />
+    <CounterComponent />
+    {/* First exercise */}
+
+    {/* <GreetingsComponent greeting="Ejercicio numero 1 cumplido" /> */}
 
     {/* Todo-list */}
 
