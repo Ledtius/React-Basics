@@ -9,6 +9,7 @@
   padding: 2rem;
   /* width: 23rem; */
   box-shadow: var(--todo-list-shadow);
+  min-width: 16rem;
 }
 
 .counter__value {
