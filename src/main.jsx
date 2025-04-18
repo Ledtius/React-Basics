@@ -12,9 +12,14 @@ import { GreetingsComponent } from "./fundamentals/greeting/greeting.jsx";
 
 import { CounterComponent } from "./fundamentals/counter/counter.jsx";
 
+import { BarComponent } from "./fundamentals/bar/bar.jsx";
+
 const root = createRoot(document.getElementById("root")).render(
   <>
-    <CounterComponent />
+    <BarComponent />
+
+    {/* Second exercise */}
+    {/* <CounterComponent /> */}
     {/* First exercise */}
 
     {/* <GreetingsComponent greeting="Ejercicio numero 1 cumplido" /> */}
