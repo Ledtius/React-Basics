@@ -1,8 +1,45 @@
-.count {
+.counter {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 2rem;
-  background-color: red;
-  width: 23rem;
+  background-color: var(--todo-list-primary);
+  border: 1px solid var(--todo-list-secondary);
+  border-radius: 3rem;
+  padding: 2rem;
+  /* width: 23rem; */
+  box-shadow: var(--todo-list-shadow);
+}
+
+.counter__value {
+  margin: 0;
+  color: var(--todo-list-secondary);
+  font-weight: 500;
+  max-width: 37.1094px;
+  overflow: auto;
+}
+
+.counter__btns {
+  display: flex;
+  gap: 0.2rem;
+}
+
+.counter__btn {
+  position: relative;
+  border-radius: 2rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  background-color: var(--todo-list-secondary);
+  border: 1px solid var(--todo-list-primary);
+  font-weight: 800;
+  color: white;
+  box-shadow: var(--todo-list-shadow);
+  transition: all 0.2s ease;
+}
+
+.counter__btn:active {
+  box-shadow: none;
+  top: 2px;
 }
