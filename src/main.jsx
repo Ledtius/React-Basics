@@ -12,11 +12,15 @@ import { GreetingsComponent } from "./fundamentals/greeting/greeting.jsx";
 
 import { CounterComponent } from "./fundamentals/counter/counter.jsx";
 
-import { BarComponent } from "./fundamentals/bar/bar.jsx";
+import { BarComponent } from "./fundamentals/printBar/bar/bar.jsx";
+
+import { ElementComponent } from "./fundamentals/printBar/element/element.jsx";
 
 const root = createRoot(document.getElementById("root")).render(
   <>
     <BarComponent />
+
+    <ElementComponent />
 
     {/* Second exercise */}
     {/* <CounterComponent /> */}
