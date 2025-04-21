@@ -19,7 +19,7 @@ import { ElementComponent } from "./fundamentals/printBar/element/element.jsx";
 const root = createRoot(document.getElementById("root")).render(
   <>
     <BarComponent />
-
+{/* as */}
     <ElementComponent />
 
     {/* Second exercise */}
