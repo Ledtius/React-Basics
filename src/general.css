@@ -47,7 +47,7 @@ h4 {
   --todo-list-shadow: 0 4px 1px rgb(177, 177, 177);
 }
 
-.todo-list {
+/* .todo-list {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -60,6 +60,15 @@ h4 {
 }
 
 .todo-list__content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+ */
+
+.container {
   display: flex;
   align-items: center;
   flex-direction: column;
