@@ -1,0 +1,13 @@
+.element {
+  background-color: var(--todo-list-secondary);
+  width: clamp(233px, 70vw, 326px);
+  text-align: center;
+  padding: 0.6rem;
+  border-radius: 1rem;
+  box-shadow: var(--todo-list-shadow);
+}
+
+.element__text {
+  color: var(--todo-list-primary);
+  font-weight: 500;
+}
