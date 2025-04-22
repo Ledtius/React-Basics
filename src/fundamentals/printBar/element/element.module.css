@@ -5,6 +5,7 @@
   padding: 0.6rem;
   border-radius: 1rem;
   box-shadow: var(--todo-list-shadow);
+  min-height: 4rem;
 }
 
 .element__text {
