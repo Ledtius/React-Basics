@@ -15,6 +15,7 @@
 .accordion {
   display: flex;
   align-items: center;
+  min-height: 12rem;
   width: clamp(233px, 70vw, 326px);
   background-color: var(--todo-list-primary);
   box-shadow: var(--todo-list-shadow);
