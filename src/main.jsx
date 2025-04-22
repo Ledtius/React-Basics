@@ -2,25 +2,13 @@ import React, { StrictMode } from "react";
 
 import { createRoot } from "react-dom/client";
 
-import { FormTodoList } from "./todo-list-react/components/form/form.jsx";
-
-import { ItemList } from "./todo-list-react/components/item/item.jsx";
+import { ToggleComponent } from "./fundamentals/toggle/toggle";
 
 import "./general.css";
 
-import { GreetingsComponent } from "./fundamentals/greeting/greeting.jsx";
-
-import { CounterComponent } from "./fundamentals/counter/counter.jsx";
-
-import { BarComponent } from "./fundamentals/printBar/bar/bar.jsx";
-
-import { ElementComponent } from "./fundamentals/printBar/element/element.jsx";
-
 const root = createRoot(document.getElementById("root")).render(
   <>
-    <div className="container">
-      <BarComponent />
-    </div>
+    <ToggleComponent />
 
     {/* Second exercise */}
     {/* <CounterComponent /> */}
