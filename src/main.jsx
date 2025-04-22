@@ -20,7 +20,6 @@ const root = createRoot(document.getElementById("root")).render(
   <>
     <div className="container">
       <BarComponent />
-      <ElementComponent />
     </div>
 
     {/* Second exercise */}
