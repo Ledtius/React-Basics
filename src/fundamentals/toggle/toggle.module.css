@@ -1,0 +1,65 @@
+[type="checkbox"] {
+  display: none;
+}
+[type="checkbox"] + label {
+  padding-left: 3.4rem;
+  /* padding-right: 3.4rem; */
+
+  cursor: pointer;
+  /* padding-right: 5rem; */
+}
+.accordion {
+  display: flex;
+  align-items: center;
+  width: clamp(233px, 70vw, 326px);
+  background-color: var(--todo-list-primary);
+  box-shadow: var(--todo-list-shadow);
+  border-radius: 2rem;
+  padding: 2rem;
+  border: 1px solid grey;
+}
+
+.accordion__checkbox {
+}
+.accordion__text {
+  color: var(--todo-list-secondary);
+}
+
+label {
+  /* text-decoration: line-through;
+    text-decoration-color: red;  */
+  scrollbar-width: thin;
+  scrollbar-color: #63e6be transparent;
+  padding: 2rem;
+  position: relative;
+}
+
+label::before {
+  content: "";
+  border-radius: 100%;
+  border: solid 2px #63e6be;
+  /* border-color: ; */
+
+  width: 1.8rem;
+  height: 1.8rem;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  /* z-index: 1; */
+  transition: all 0.1s ease;
+  /* margin-left: 1rem; */
+  /* background-color: red; */
+}
+
+[type="checkbox"]:checked + label::before {
+  border-color: #63e6be;
+  background-color: #63e6be;
+  color: greenyellow;
+
+  background-image: url(../../todo-list-react/components/item/assets/check-solid.svg);
+  background-repeat: no-repeat;
+  opacity: 1;
+  /* transform: scale(1.09); */
+  background-size: cover;
+  /* animation: appear-scale-element 0.5s ease; */
+}
