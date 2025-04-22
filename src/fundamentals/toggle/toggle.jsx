@@ -3,7 +3,7 @@ import { useState } from "react";
 import toggleStyles from "./toggle.module.css";
 import { CheckCheck } from "lucide-react";
 
-export const ToggleComponent = () => {
+export const ToggleComponent = ({ text, id }) => {
   const [check, setCheck] = useState(false);
   const [styleText, setStyleText] = useState("accordion__text");
 
@@ -13,7 +13,7 @@ export const ToggleComponent = () => {
     if (checkValue === false) {
       setStyleText("accordion__text--inactive");
     } else {
-      setStyleText("accordion__text");
+      setStyleText("acscordion__text");
     }
 
     console.log(checkValue);
@@ -25,16 +25,11 @@ export const ToggleComponent = () => {
         <input
           className={toggleStyles["accordion__checkbox"]}
           type="checkbox"
-          id="check"
+          id={id}
           onChange={checkFunction}
         />
-        <label className={toggleStyles["accordion__label"]} htmlFor="check">
-          <p className={toggleStyles[styleText]}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis fuga
-            inventore eius magnam hic blanditiis, nam provident aperiam
-            consequuntur laboriosam perferendis repudiandae, accusantium quaerat
-            officia, maxime est ipsum! Possimus, sapiente?
-          </p>
+        <label className={toggleStyles["accordion__label"]} htmlFor={id}>
+          <p className={toggleStyles[styleText]}>{text}</p>
         </label>
       </div>
     </>
