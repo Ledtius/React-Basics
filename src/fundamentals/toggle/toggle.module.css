@@ -39,37 +39,39 @@
 .accordion__text {
   margin: 0;
   color: var(--todo-list-secondary);
-  animation: sizeAppear 0.5s ease;
+  /* animation: sizeAppear 0.5s ease; */
 }
 
 .accordion__text--inactive {
   opacity: 0;
+  min-height: 24px;
   display: none;
-  animation: sizeDisappear 0.5s ease;
+
+  /* animation: sizeDisappear 0.5s ease; */
 }
 
 @keyframes sizeDisappear {
   0% {
     opacity: 1;
     display: flex;
-    height: 216px;
+    /* height: 216px; */
   }
   100% {
     opacity: 0;
     display: none;
-    height: 0px;
+    /* height: 0px; */
   }
 }
 @keyframes sizeAppear {
   0% {
     opacity: 0;
     display: none;
-    height: 0px;
+    /* height: 0px; */
   }
   100% {
     opacity: 1;
     display: flex;
-    height: 216px;
+    /* height: 216px; */
   }
 }
 
