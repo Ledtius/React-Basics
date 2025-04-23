@@ -16,8 +16,8 @@ const students = [
 const root = createRoot(document.getElementById("root")).render(
   <>
     <div className="container">
-      {students.map(({ name }, id) => (
-        <TableComponent name={name} age={id} />
+      {students.map(({ name, age }, index) => (
+        <TableComponent name={name} age={age} key={index} />
       ))}
     </div>
     {/* Second exercise */}
