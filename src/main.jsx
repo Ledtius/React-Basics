@@ -6,10 +6,19 @@ import { TableComponent } from "./fundamentals/table/table";
 
 import "./general.css";
 
+const students = [
+  { name: "Juan", age: 20 },
+  { name: "Maria", age: 22 },
+  { name: "Carlos", age: 19 },
+  { name: "Luisa", age: 21 },
+];
+
 const root = createRoot(document.getElementById("root")).render(
   <>
     <div className="container">
-      <TableComponent name={"asd"} age={"12"} />
+      {students.map(({ name }, id) => (
+        <TableComponent name={name} age={id} />
+      ))}
     </div>
     {/* Second exercise */}
     {/* <CounterComponent /> */}
