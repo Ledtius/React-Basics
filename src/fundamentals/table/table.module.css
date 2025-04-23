@@ -1,0 +1,12 @@
+.table {
+  border: 1px solid var(--todo-list-secondary);
+  color: white;
+  /* padding: 2rem; */
+}
+.table__row {
+    border: 1px solid var(--todo-list-secondary);
+}
+.table__column {
+    border: 1px solid var(--todo-list-secondary);
+    padding: 1rem;
+}
