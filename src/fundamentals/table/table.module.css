@@ -16,4 +16,6 @@
 }
 
 .table__body {
+  border: 12px solid var(--todo-list-secondary);
+  /* width: 23rem; */
 }
