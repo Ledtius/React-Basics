@@ -4,9 +4,16 @@
   /* padding: 2rem; */
 }
 .table__row {
-    border: 1px solid var(--todo-list-secondary);
+  border: 1px solid var(--todo-list-secondary);
 }
+
 .table__column {
-    border: 1px solid var(--todo-list-secondary);
-    padding: 1rem;
+  border: 1px solid var(--todo-list-secondary);
+  padding: 1rem;
+}
+
+.table__head {
+}
+
+.table__body {
 }
