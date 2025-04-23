@@ -4,26 +4,30 @@ export const TableComponent = ({ name, age }) => {
   return (
     <>
       <table className={tableStyles["table"]}>
-        <tr className={tableStyles["table__row"]}>
-          <td className={tableStyles["table__column"]}>Name</td>
-          <td className={tableStyles["table__column"]}>Age</td>
-        </tr>
-        <tr className={tableStyles["table__row"]}>
-          <td className={tableStyles["table__column"]}>{name}</td>
-          <td className={tableStyles["table__column"]}>{age}</td>
-        </tr>
-        <tr className={tableStyles["table__row"]}>
-          <td className={tableStyles["table__column"]}>{name}</td>
-          <td className={tableStyles["table__column"]}>{age}</td>
-        </tr>
-        <tr className={tableStyles["table__row"]}>
-          <td className={tableStyles["table__column"]}>{name}</td>
-          <td className={tableStyles["table__column"]}>{age}</td>
-        </tr>
-        <tr className={tableStyles["table__row"]}>
-          <td className={tableStyles["table__column"]}>{name}</td>
-          <td className={tableStyles["table__column"]}>{age}</td>
-        </tr>
+        <thead className={["table__head"]}>
+          <tr className={tableStyles["table__row"]}>
+            <th className={tableStyles["table__column"]}>Name</th>
+            <th className={tableStyles["table__column"]}>Age</th>
+          </tr>
+        </thead>
+        <tbody className={["table__body"]}>
+          <tr className={tableStyles["table__row"]}>
+            <td className={tableStyles["table__column"]}>{name}</td>
+            <td className={tableStyles["table__column"]}>{age}</td>
+          </tr>
+          <tr className={tableStyles["table__row"]}>
+            <td className={tableStyles["table__column"]}>{name}</td>
+            <td className={tableStyles["table__column"]}>{age}</td>
+          </tr>
+          <tr className={tableStyles["table__row"]}>
+            <td className={tableStyles["table__column"]}>{name}</td>
+            <td className={tableStyles["table__column"]}>{age}</td>
+          </tr>
+          <tr className={tableStyles["table__row"]}>
+            <td className={tableStyles["table__column"]}>{name}</td>
+            <td className={tableStyles["table__column"]}>{age}</td>
+          </tr>
+        </tbody>
       </table>
     </>
   );
