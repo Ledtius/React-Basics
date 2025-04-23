@@ -3,15 +3,14 @@ import tableStyles from "../table/table.module.css";
 export const TableComponent = ({ name, age }) => {
   return (
     <>
-      <table className={tableStyles["table"]}>
-        <thead className={tableStyles["table__head"]}>
-          <tr className={tableStyles["table__row"]}>
-            <th className={tableStyles["table__column"]}>Name</th>
-            <th className={tableStyles["table__column"]}>Age</th>
-          </tr>
-        </thead>
-        <tbody className={tableStyles["table__body"]}>
-          <tr className={tableStyles["table__row"]}>
+      <tr className={tableStyles["table__row"]}>
+        <td className={tableStyles["table__column"]}>{name}</td>
+        <td className={tableStyles["table__column"]}>{age}</td>
+        <td className={tableStyles["table__column"]}>
+          {age > 18 ? "Adult" : "Under-age"}
+        </td>
+      </tr>
+      {/* <tr className={tableStyles["table__row"]}>
             <td className={tableStyles["table__column"]}>{name}</td>
             <td className={tableStyles["table__column"]}>{age}</td>
           </tr>
@@ -22,13 +21,7 @@ export const TableComponent = ({ name, age }) => {
           <tr className={tableStyles["table__row"]}>
             <td className={tableStyles["table__column"]}>{name}</td>
             <td className={tableStyles["table__column"]}>{age}</td>
-          </tr>
-          <tr className={tableStyles["table__row"]}>
-            <td className={tableStyles["table__column"]}>{name}</td>
-            <td className={tableStyles["table__column"]}>{age}</td>
-          </tr>
-        </tbody>
-      </table>
+          </tr> */}
     </>
   );
 };
