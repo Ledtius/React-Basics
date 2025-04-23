@@ -2,18 +2,14 @@ import React, { StrictMode } from "react";
 
 import { createRoot } from "react-dom/client";
 
-import { ToggleComponent } from "./fundamentals/toggle/toggle";
+import { TableComponent } from "./fundamentals/table/table";
 
 import "./general.css";
-
-const inLoveArray = ["Fernanda", "Danna", "Lady", "Valentina", "Loren", "Eva"];
 
 const root = createRoot(document.getElementById("root")).render(
   <>
     <div className="container">
-      {inLoveArray.map((lovers, index) => (
-        <ToggleComponent text={lovers} id={index} />
-      ))}
+      <TableComponent name={"asd"} age={"12"} />
     </div>
     {/* Second exercise */}
     {/* <CounterComponent /> */}
