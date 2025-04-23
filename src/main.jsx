@@ -6,10 +6,15 @@ import { ToggleComponent } from "./fundamentals/toggle/toggle";
 
 import "./general.css";
 
+const inLoveArray = ["Fernanda", "Danna", "Lady", "Valentina", "Loren", "Eva"];
+
 const root = createRoot(document.getElementById("root")).render(
   <>
-    <ToggleComponent />
-
+    <div className="container">
+      {inLoveArray.map((lovers, index) => (
+        <ToggleComponent text={lovers} id={index} />
+      ))}
+    </div>
     {/* Second exercise */}
     {/* <CounterComponent /> */}
     {/* First exercise */}
