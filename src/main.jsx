@@ -4,21 +4,34 @@ import { createRoot } from "react-dom/client";
 
 import { TableComponent } from "./fundamentals/table/table";
 
+import tableStyles from "../src/fundamentals/table/table.module.css";
+
 import "./general.css";
 
 const students = [
-  { name: "Juan", age: 20 },
+  { name: "Juan", age: 16 },
   { name: "Maria", age: 22 },
-  { name: "Carlos", age: 19 },
+  { name: "Carlos", age: 17 },
   { name: "Luisa", age: 21 },
 ];
 
 const root = createRoot(document.getElementById("root")).render(
   <>
     <div className="container">
-      {students.map(({ name, age }, index) => (
-        <TableComponent name={name} age={age} key={index} />
-      ))}
+      <table className={tableStyles["table"]}>
+        <thead className={tableStyles["table__head"]}>
+          <tr className={tableStyles["table__row"]}>
+            <th className={tableStyles["table__column"]}>Name</th>
+            <th className={tableStyles["table__column"]}>Age</th>
+            <th className={tableStyles["table__column"]}>Under-age/Adult</th>
+          </tr>
+        </thead>
+        <tbody className={tableStyles["table__body"]}>
+          {students.map(({ name, age }, index) => (
+            <TableComponent name={name} age={age} key={index} />
+          ))}
+        </tbody>
+      </table>
     </div>
     {/* Second exercise */}
     {/* <CounterComponent /> */}
