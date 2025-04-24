@@ -13,7 +13,6 @@ const root = createRoot(document.getElementById("root")).render(
     <div className="todo-list">
       <h1 className="todo-list__title">Lista de tareas</h1>
       <FormComponent />
-      <ItemComponent />
     </div>
   </>
 );
