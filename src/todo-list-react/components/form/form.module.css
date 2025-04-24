@@ -31,3 +31,9 @@
   border: none;
   box-shadow: var(--todo-list-shadow);
 }
+
+.todo-list__tasks {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
