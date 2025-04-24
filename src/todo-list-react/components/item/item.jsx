@@ -2,7 +2,7 @@ import itemStyles from "./item.module.css";
 
 import { Pencil, Trash2 } from "lucide-react";
 
-export function ItemList({ taskName, id }) {
+export function ItemComponent({ taskName, id }) {
   return (
     <div className={itemStyles["todo-list__element"]}>
       <div className={itemStyles["todo-list__check-task"]}>

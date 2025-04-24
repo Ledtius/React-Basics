@@ -4,7 +4,7 @@ import formStyles from "./form.module.css";
 
 console.log(formStyles);
 
-export function FormTodoList() {
+export function FormComponent() {
   const [text, setText] = useState("");
   const [task, setTask] = useState([]);
 
