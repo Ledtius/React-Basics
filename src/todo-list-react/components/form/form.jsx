@@ -11,23 +11,31 @@ export function FormComponent() {
   const [taskList, setTaskList] = useState([]);
 
   const handleTask = (e) => {
-    console.log(task);
+    // console.log(task);
     const inputValue = e.target.value;
 
     setTask(inputValue);
 
-    console.log(task);
+
+    console.log(e.currentTarget.textContent);
+    // console.log(task);
   };
 
   const handleList = (e) => {
     e.preventDefault();
     setTaskList([...taskList, task]);
-
+    const inputElement = e.target.classList.contains("todo-list__bar-input");
     // useEffect(() => {});
+    console.log(inputElement);
+   setTask("");
+
   };
 
   const handleDelete = (id) => {
     console.log(id);
+    console.log(taskList);
+    setTaskList(taskList.filter((_, index) => id !== index));
+    console.log(taskList);
   };
 
   return (
