@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import formStyles from "./form.module.css";
 
 import { ItemComponent } from "../item/item";
+import { Component } from "lucide-react";
 
 export function FormComponent() {
   const [task, setTask] = useState("");
@@ -23,6 +24,10 @@ export function FormComponent() {
     setTaskList([...taskList, task]);
 
     // useEffect(() => {});
+  };
+
+  const handleDelete = (id) => {
+    console.log(id);
   };
 
   return (
@@ -45,7 +50,12 @@ export function FormComponent() {
       </form>
       <div className={formStyles["todo-list__tasks"]}>
         {taskList.map((task, index) => (
-          <ItemComponent key={index} id={index} taskName={task} />
+          <ItemComponent
+            key={index}
+            id={index}
+            taskName={task}
+            deleteItem={() => handleDelete(index)}
+          />
         ))}
       </div>
     </div>
