@@ -2,7 +2,7 @@ import itemStyles from "./item.module.css";
 
 import { Pencil, Trash2 } from "lucide-react";
 
-export function ItemComponent({ taskName, id, deleteItem }) {
+export function ItemComponent({ taskName, id, deleteItem, editItem }) {
   return (
     <div className={itemStyles["todo-list__element"]}>
       <div className={itemStyles["todo-list__check-task"]}>
@@ -24,6 +24,7 @@ export function ItemComponent({ taskName, id, deleteItem }) {
             className={itemStyles["todo-list__icon todo-list__icon--edit  "]}
             color="white"
             size={20}
+            onClick={editItem}
           />
         </button>
         <button
