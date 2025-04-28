@@ -1,0 +1,5 @@
+.todo-list__tasks {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
