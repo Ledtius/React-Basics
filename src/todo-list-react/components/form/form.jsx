@@ -20,7 +20,10 @@ export function FormComponent({ taskList, setTaskList }) {
 
   const handleAddBtn = (e) => {
     e.preventDefault();
-    setTaskList([...taskList, { ...task, id: task.name }]);
+    setTaskList([
+      ...taskList,
+      { ...task, id: task.name + Math.floor(Math.random() * 1000000) },
+    ]);
 
     setTask((prevTask) => ({
       ...prevTask,
