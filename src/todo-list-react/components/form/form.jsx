@@ -1,5 +1,5 @@
 // import "../form/form.module.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import formStyles from "./form.module.css";
 
@@ -8,6 +8,28 @@ import { ItemComponent } from "../item/item";
 export function FormComponent() {
   const [task, setTask] = useState({ name: "", id: "", state: false });
 
+  const [taskList, setTaskList] = useState([]);
+
+  const handleInput = (e) => {
+    const inputValue = e.target.value.trim();
+    // console.log(inputValue);
+
+    setTask((prevTask) => ({
+      ...prevTask,
+      name: inputValue,
+    }));
+    // console.log(task);
+  };
+
+  const handleAddBtn = () => {
+    setTaskList([...taskList, { ...task, id: task.name }]);
+  };
+  useEffect(() => {
+    console.log(taskList);
+  }, [taskList]);
+
+  
+
   return (
     <div className="todo-list">
       <form className={formStyles["todo-list__bar"]}>
@@ -15,8 +37,14 @@ export function FormComponent() {
           className={formStyles["todo-list__bar-input"]}
           type="text"
           placeholder="Digita tu tarea del dia"
+          onInput={handleInput}
+          value={task.name}
         />
-        <button className={formStyles["todo-list__bar-button"]} type="button">
+        <button
+          className={formStyles["todo-list__bar-button"]}
+          type="button"
+          onClick={handleAddBtn}
+        >
           Añadir
         </button>
       </form>
