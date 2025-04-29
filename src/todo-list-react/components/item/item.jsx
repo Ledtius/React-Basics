@@ -2,18 +2,33 @@ import itemStyles from "./item.module.css";
 
 import { Pencil, Trash2 } from "lucide-react";
 
-export function ItemComponent({ taskName, id }) {
-  console.log(taskName);
+export function ItemComponent({ taskName, id, taskList, setTaskList }) {
+  // console.log(taskName);
+  // console.log(id);
+
+  const handleCheck = (e) => {
+    const checkValue = e.target.checked;
+
+    const updatedList = taskList.map((task) =>
+      task.id === id ? { ...task, state: checkValue } : task
+    );
+    console.log(checkValue);
+
+    setTaskList(updatedList);
+  };
+
+  const handleDeleteTask = () => {};
+
   return (
     <div className={itemStyles["todo-list__element"]}>
       <div className={itemStyles["todo-list__check-task"]} id={id}>
         <input
           className={itemStyles["todo-list__check"]}
           type="checkbox"
-          name="checkTask"
-          id={id}
+          id={`label${id}`}
+          onClick={handleCheck}
         />
-        <label className={itemStyles["todo-list__task"]} htmlFor={id}>
+        <label className={itemStyles["todo-list__task"]} htmlFor={`label${id}`}>
           {taskName}
         </label>
       </div>
