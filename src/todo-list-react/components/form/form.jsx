@@ -4,7 +4,6 @@ import formStyles from "./form.module.css";
 
 import { useEffect, useState } from "react";
 
-
 export function FormComponent({ taskList, setTaskList }) {
   const [task, setTask] = useState({ name: "", id: "", state: false });
 
@@ -16,10 +15,11 @@ export function FormComponent({ taskList, setTaskList }) {
       ...prevTask,
       name: inputValue,
     }));
-    console.log(task);
+    // console.log(task);
   };
 
-  const handleAddBtn = () => {
+  const handleAddBtn = (e) => {
+    e.preventDefault();
     setTaskList([...taskList, { ...task, id: task.name }]);
 
     setTask((prevTask) => ({
@@ -33,7 +33,7 @@ export function FormComponent({ taskList, setTaskList }) {
 
   return (
     <div className="todo-list">
-      <form className={formStyles["todo-list__bar"]}>
+      <form className={formStyles["todo-list__bar"]} onSubmit={handleAddBtn}>
         <input
           className={formStyles["todo-list__bar-input"]}
           type="text"
@@ -41,11 +41,7 @@ export function FormComponent({ taskList, setTaskList }) {
           onInput={handleInput}
           value={task.name}
         />
-        <button
-          className={formStyles["todo-list__bar-button"]}
-          type="button"
-          onClick={handleAddBtn}
-        >
+        <button className={formStyles["todo-list__bar-button"]} type="submit">
           Añadir
         </button>
       </form>
