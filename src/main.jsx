@@ -13,11 +13,12 @@ import "./general.css";
 function App() {
   const [taskList, setTaskList] = useState([]);
 
+  // console.log(taskList);
   return (
     <div className="todo-list">
       <h1 className="todo-list__title">Lista de tareas</h1>
       <FormComponent taskList={taskList} setTaskList={setTaskList} />
-      <ListComponent taskList={taskList} />
+      <ListComponent taskList={taskList} setTaskList={setTaskList} />
     </div>
   );
 }
