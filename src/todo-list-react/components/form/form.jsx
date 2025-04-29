@@ -1,34 +1,35 @@
 // import "../form/form.module.css";
-import { useState, useEffect } from "react";
 
 import formStyles from "./form.module.css";
 
-import { ItemComponent } from "../item/item";
+import { useEffect, useState } from "react";
 
-export function FormComponent() {
+
+export function FormComponent({ taskList, setTaskList }) {
   const [task, setTask] = useState({ name: "", id: "", state: false });
 
-  const [taskList, setTaskList] = useState([]);
-
   const handleInput = (e) => {
-    const inputValue = e.target.value.trim();
+    const inputValue = e.target.value;
     // console.log(inputValue);
 
     setTask((prevTask) => ({
       ...prevTask,
       name: inputValue,
     }));
-    // console.log(task);
+    console.log(task);
   };
 
   const handleAddBtn = () => {
     setTaskList([...taskList, { ...task, id: task.name }]);
+
+    setTask((prevTask) => ({
+      ...prevTask,
+      name: "",
+    }));
   };
   useEffect(() => {
     console.log(taskList);
   }, [taskList]);
-
-  
 
   return (
     <div className="todo-list">
