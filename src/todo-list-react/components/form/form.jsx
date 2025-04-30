@@ -9,13 +9,11 @@ export function FormComponent({ taskList, setTaskList }) {
 
   const handleInput = (e) => {
     const inputValue = e.target.value;
-    // console.log(inputValue);
 
     setTask((prevTask) => ({
       ...prevTask,
       name: inputValue,
     }));
-    // console.log(task);
   };
 
   const handleAddBtn = (e) => {
@@ -29,9 +27,10 @@ export function FormComponent({ taskList, setTaskList }) {
       ...prevTask,
       name: "",
     }));
+    // console.log(taskList);
   };
   useEffect(() => {
-    console.log(taskList);
+    // console.log(taskList);
   }, [taskList]);
 
   return (
