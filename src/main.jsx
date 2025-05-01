@@ -9,27 +9,20 @@ import { FormComponent } from "./todo-list-react/components/form/form";
 import { ListComponent } from "./todo-list-react/components/list/list.jsx";
 
 import "./general.css";
+let count2 = 0;
 
 function ProveThings() {
   const [count, setCount] = useState(0);
 
-  const addCount = () => {
-    setTimeout(() => {
-      setCount(count + 1);
-    }, 2000);
-  };
-
-  return (
-    <>
-      <div>
-        <h3>Count 1</h3>
-        <div>
-          <button onClick={addCount}>+</button>
-        </div>
-        <span>{count}</span>
-      </div>
-    </>
-  );
+  console.log("Rendering...");
+  console.log(`Cont2 fuera: ${count2}`);
+  console.log(`Cont fuera: ${count}`);
+  while (count2 !== 1) {
+    count2++;
+    setCount(2);
+    console.log(`Cont2 dentro: ${count2}`);
+    console.log(`Cont dentro: ${count}`);
+  }
 }
 
 function App() {
