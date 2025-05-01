@@ -9,20 +9,50 @@ import { FormComponent } from "./todo-list-react/components/form/form";
 import { ListComponent } from "./todo-list-react/components/list/list.jsx";
 
 import "./general.css";
-let count2 = 0;
 
 function ProveThings() {
+  const [person, setPerson] = useState({
+    name: "Julian",
+    age: 16,
+    country: "Salvador",
+  });
+
   const [count, setCount] = useState(0);
 
-  console.log("Rendering...");
-  console.log(`Cont2 fuera: ${count2}`);
-  console.log(`Cont fuera: ${count}`);
-  while (count2 !== 1) {
-    count2++;
-    setCount(2);
-    console.log(`Cont2 dentro: ${count2}`);
-    console.log(`Cont dentro: ${count}`);
-  }
+  const countries = ["Colombia", "Mexico", "Brazil"];
+
+  const handleCountry = () => {
+    setCount(count + 1);
+    if (count >= 2) {
+      setCount(0);
+    }
+
+    setPerson({ ...person, country: countries[count] });
+  };
+
+  useEffect(() => {
+    console.log(countries[count]);
+    console.log(person);
+  }, [count]);
+
+  return (
+    <>
+      <div>
+        <div>
+          <strong>Countries:</strong>
+          {countries.map((country, index) => (
+            <li key={index}>{country}</li>
+          ))}
+        </div>
+        <div>
+          <p>{person.name}</p>
+          <p>{person.age}</p>
+          <p>{person.country}</p>
+        </div>
+        <button onClick={handleCountry}>Change country</button>
+      </div>
+    </>
+  );
 }
 
 function App() {
