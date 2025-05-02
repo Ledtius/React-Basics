@@ -11,45 +11,42 @@ import { ListComponent } from "./todo-list-react/components/list/list.jsx";
 import "./general.css";
 
 function ProveThings() {
-  const [person, setPerson] = useState({
-    name: "Julian",
-    age: 16,
-    country: "Salvador",
-  });
+  const [fruits, setFruits] = useState(["Lime", "Kiwi", "Papaya"]);
 
   const [count, setCount] = useState(0);
 
-  const countries = ["Colombia", "Mexico", "Brazil"];
+  const otherFruits = ["Watermelon", "Strawberry", "Grape", "Cherry"];
+  const addedFruits = () => {
+    console.log(count);
+    if (count < otherFruits.length) {
+      // setFruits([...fruits, (fruits[fruits.length-1] = otherFruits[count])]);
+      setCount(count + 1);
+      console.log(count);
 
-  const handleCountry = () => {
-    setCount(count + 1);
-    if (count >= 2) {
-      setCount(0);
+      setFruits([...fruits, otherFruits[count]]);
     }
-
-    setPerson({ ...person, country: countries[count] });
   };
-
-  useEffect(() => {
-    console.log(countries[count]);
-    console.log(person);
-  }, [count]);
-
+  // console.log(fruits.length);
   return (
     <>
       <div>
         <div>
-          <strong>Countries:</strong>
-          {countries.map((country, index) => (
-            <li key={index}>{country}</li>
-          ))}
+          <strong>Options</strong>
+          <ul>
+            {otherFruits.map((fruit, index) => (
+              <li key={index}>{fruit}</li>
+            ))}
+          </ul>
         </div>
         <div>
-          <p>{person.name}</p>
-          <p>{person.age}</p>
-          <p>{person.country}</p>
+          <strong>Your fruit's basket</strong>
+          <ul>
+            {fruits.map((fruit, index) => (
+              <li key={index}>{fruit}</li>
+            ))}
+          </ul>
+          <button onClick={addedFruits}>Added Fruit</button>
         </div>
-        <button onClick={handleCountry}>Change country</button>
       </div>
     </>
   );
