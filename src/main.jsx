@@ -13,31 +13,16 @@ import "./general.css";
 function ProveThings() {
   const [fruits, setFruits] = useState(["Lime", "Kiwi", "Papaya"]);
 
-  const [count, setCount] = useState(0);
-
-  const otherFruits = ["Watermelon", "Strawberry", "Grape", "Cherry"];
-  const addedFruits = () => {
-    console.log(count);
-    if (count < otherFruits.length) {
-      // setFruits([...fruits, (fruits[fruits.length-1] = otherFruits[count])]);
-      setCount(count + 1);
-      console.log(count);
-
-      setFruits([...fruits, otherFruits[count]]);
-    }
+  const deleteFruit = () => {
+    setFruits(fruits.filter((fruit) => fruit !== "Kiwi"));
   };
+  useEffect(() => {
+    console.log(fruits);
+  }, [fruits]);
   // console.log(fruits.length);
   return (
     <>
       <div>
-        <div>
-          <strong>Options</strong>
-          <ul>
-            {otherFruits.map((fruit, index) => (
-              <li key={index}>{fruit}</li>
-            ))}
-          </ul>
-        </div>
         <div>
           <strong>Your fruit's basket</strong>
           <ul>
@@ -45,7 +30,7 @@ function ProveThings() {
               <li key={index}>{fruit}</li>
             ))}
           </ul>
-          <button onClick={addedFruits}>Added Fruit</button>
+          <button onClick={deleteFruit}>Deleted Fruit</button>
         </div>
       </div>
     </>
