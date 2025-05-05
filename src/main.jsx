@@ -1,4 +1,4 @@
-import React, { StrictMode } from "react";
+import React, { StrictMode, use } from "react";
 
 import { useState, useEffect } from "react";
 
@@ -8,32 +8,63 @@ import { FormComponent } from "./todo-list-react/components/form/form";
 
 import { ListComponent } from "./todo-list-react/components/list/list.jsx";
 
+import itemStyles from "./todo-list-react/components/item/item.module.css";
 import "./general.css";
+import { ToggleLeft } from "lucide-react";
 
 function ProveThings() {
-  const [tasks, setTasks] = useState([
-    { id: 1, name: "Read" },
-    { id: 2, name: "Study" },
-    { id: 3, name: "Pray" },
-  ]);
+  /* **Simular toggle (true/false)**: Crea un estado booleano `isVisible` y un botón que muestre u oculte un mensaje cada vez que lo presiones.
+   */
 
-  const editTask = (idToEdit) => {
-    setTasks((prevTasks) =>
-      prevTasks.map((task) =>
-        task.id === idToEdit ? { ...task, name: "Kill You" } : task
-      )
-    );
+  const [toggle, setToggle] = useState(false);
+
+  const [style, setStyle] = useState("disappear");
+
+  const handleToggle = (e) => {
+    const value = e.target.checked;
+
+    setToggle(value);
   };
 
+  useEffect(() => {
+    if (toggle) {
+      // setStyle("appear");
+      console.log(`truly: ${toggle}`);
+    } else {
+      // setStyle("disappear");
+      console.log(`falsy: ${toggle}`);
+    }
+    console.log(style);
+  }, [toggle]);
+
+  useEffect(() => {
+    console.log(`actual style: ${style}`);
+  }, [style]);
+
+  // console.log(toggle);
   return (
     <>
-      <div>
-        <ul>
-          {tasks.map((task) => (
-            <li key={task.id}>{task.name}</li>
-          ))}
-        </ul>
-        <button onClick={() => editTask(1)}>Edit task1</button>
+      <div className={itemStyles["todo-list__check-task"]}>
+        <input
+          className={itemStyles["todo-list__check"]}
+          type="checkbox"
+          id={`label`}
+          onClick={handleToggle}
+        />
+        <label className={itemStyles["todo-list__task"]} htmlFor={`label`}>
+          Imagine a Toggle
+        </label>
+      </div>
+      <div
+        className={itemStyles[`todo-list__${toggle ? "appear" : "disappear"}`]}
+      >
+        <h2>Message</h2>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia
+          nihil iusto est repellat, sunt quisquam reprehenderit aut explicabo
+          magnam! Earum ex, reiciendis optio ea ipsum quo ullam est eos
+          necessitatibus.
+        </p>
       </div>
     </>
   );
