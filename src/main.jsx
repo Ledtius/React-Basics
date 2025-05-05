@@ -13,59 +13,10 @@ import "./general.css";
 import { ToggleLeft } from "lucide-react";
 
 function ProveThings() {
-  /* **Simular toggle (true/false)**: Crea un estado booleano `isVisible` y un botón que muestre u oculte un mensaje cada vez que lo presiones.
-   */
-
-  const [toggle, setToggle] = useState(false);
-
-  const [style, setStyle] = useState("disappear");
-
-  const handleToggle = (e) => {
-    const value = e.target.checked;
-
-    setToggle(value);
-  };
-
-  useEffect(() => {
-    if (toggle) {
-      // setStyle("appear");
-      console.log(`truly: ${toggle}`);
-    } else {
-      // setStyle("disappear");
-      console.log(`falsy: ${toggle}`);
-    }
-    console.log(style);
-  }, [toggle]);
-
-  useEffect(() => {
-    console.log(`actual style: ${style}`);
-  }, [style]);
-
   // console.log(toggle);
   return (
     <>
-      <div className={itemStyles["todo-list__check-task"]}>
-        <input
-          className={itemStyles["todo-list__check"]}
-          type="checkbox"
-          id={`label`}
-          onClick={handleToggle}
-        />
-        <label className={itemStyles["todo-list__task"]} htmlFor={`label`}>
-          Imagine a Toggle
-        </label>
-      </div>
-      <div
-        className={itemStyles[`todo-list__${toggle ? "appear" : "disappear"}`]}
-      >
-        <h2>Message</h2>
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia
-          nihil iusto est repellat, sunt quisquam reprehenderit aut explicabo
-          magnam! Earum ex, reiciendis optio ea ipsum quo ullam est eos
-          necessitatibus.
-        </p>
-      </div>
+      <div></div>
     </>
   );
 }

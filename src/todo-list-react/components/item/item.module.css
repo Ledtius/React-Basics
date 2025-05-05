@@ -149,12 +149,3 @@ label::before {
     min-width: 100px;
   }
 }
-
-.todo-list__appear {
-  opacity: 1;
-  display: block;
-}
-.todo-list__disappear {
-  opacity: 0;
-  display: none;
-}
