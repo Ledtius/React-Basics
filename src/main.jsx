@@ -11,28 +11,29 @@ import { ListComponent } from "./todo-list-react/components/list/list.jsx";
 import "./general.css";
 
 function ProveThings() {
-  const [task1, setTask1] = useState({ name: "Read" });
-  console.log(task1);
+  const [tasks, setTasks] = useState([
+    { id: 1, name: "Read" },
+    { id: 2, name: "Study" },
+    { id: 3, name: "Pray" },
+  ]);
 
-  const [task2, setTask2] = useState({ name: "Study" });
-  const [task3, setTask3] = useState({ name: "Pray" });
-  const [tasks, setTasks] = useState([task1.name, task2.name, task3.name]);
-  console.log(tasks);
-  const editTask = () => {
-    setTask1({ name: "Kill You" });
-    // setTasks([]);
+  const editTask = (idToEdit) => {
+    setTasks((prevTasks) =>
+      prevTasks.map((task) =>
+        task.id === idToEdit ? { ...task, name: "Kill You" } : task
+      )
+    );
   };
 
   return (
     <>
       <div>
         <ul>
-          {tasks.map((task, index) => (
-            <li key={index}>{task}</li>
+          {tasks.map((task) => (
+            <li key={task.id}>{task.name}</li>
           ))}
-          <li>{task1.name}</li>
         </ul>
-        <button onClick={editTask}>123</button>
+        <button onClick={() => editTask(1)}>Edit task1</button>
       </div>
     </>
   );
