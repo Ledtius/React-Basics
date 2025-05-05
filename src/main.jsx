@@ -11,27 +11,28 @@ import { ListComponent } from "./todo-list-react/components/list/list.jsx";
 import "./general.css";
 
 function ProveThings() {
-  const [fruits, setFruits] = useState(["Lime", "Kiwi", "Papaya"]);
+  const [task1, setTask1] = useState({ name: "Read" });
+  console.log(task1);
 
-  const deleteFruit = () => {
-    setFruits(fruits.filter((fruit) => fruit !== "Kiwi"));
+  const [task2, setTask2] = useState({ name: "Study" });
+  const [task3, setTask3] = useState({ name: "Pray" });
+  const [tasks, setTasks] = useState([task1.name, task2.name, task3.name]);
+  console.log(tasks);
+  const editTask = () => {
+    setTask1({ name: "Kill You" });
+    // setTasks([]);
   };
-  useEffect(() => {
-    console.log(fruits);
-  }, [fruits]);
-  // console.log(fruits.length);
+
   return (
     <>
       <div>
-        <div>
-          <strong>Your fruit's basket</strong>
-          <ul>
-            {fruits.map((fruit, index) => (
-              <li key={index}>{fruit}</li>
-            ))}
-          </ul>
-          <button onClick={deleteFruit}>Deleted Fruit</button>
-        </div>
+        <ul>
+          {tasks.map((task, index) => (
+            <li key={index}>{task}</li>
+          ))}
+          <li>{task1.name}</li>
+        </ul>
+        <button onClick={editTask}>123</button>
       </div>
     </>
   );
