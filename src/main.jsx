@@ -13,93 +13,82 @@ import "./general.css";
 import { ToggleLeft } from "lucide-react";
 
 function ProveThings() {
-  /* **Formulario con múltiples campos**: Usa un solo estado para manejar los valores de un formulario (`nombre`, `email`, `edad`) y actualízalos de forma controlada. */
+  /* **Lista de usuarios aleatorios**: Genera usuarios con nombre y edad aleatoria, agrégalos a una lista con un botón. Asegúrate de mantener los anteriores. */
+  const names = [
+    "Pedro",
+    "Alexander",
+    "Tomas",
+    "Leonardo",
+    "Cricet",
+    "Pilar",
+    "Melissa",
+    "Sandra",
+  ];
 
-  const [formData, setFormData] = useState({
-    name: "none name",
-    lastName: "none last name",
-    email: "none@gmail.com",
-    age: 0,
-  });
+  const ages = [20, 29, 38, 19, 27];
 
-  const handleChange = (e) => {
-    const name = e.target.name;
-    const value = e.target.value;
+  const [person, setPerson] = useState({ name: "", age: 0 });
 
-    console.log(name, value);
+  const [persons, setPersons] = useState([]);
 
-    setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
+  const createRandomPerson = () => {
+    const randomValueNames = Math.floor(Math.random() * names.length);
+    const randomValueAges = Math.floor(Math.random() * ages.length);
+
+    console.log(`Names index:${randomValueNames}`);
+    console.log(`Ages index:${randomValueAges}`);
+
+    setPerson({
+      ...person,
+      name: names[randomValueNames],
+      age: ages[randomValueAges],
+    });
   };
 
-  const handleForm = (e) => {
-    e.preventDefault();
-  };
-
-  const handleFormSubmit = () => {
-    setFormData((prevFormData) => ({
-      ...prevFormData,
-      name: "",
-      lastName: "",
-      email: "",
-      age: 0,
-    }));
-  };
-
-  console.log(formData);
   useEffect(() => {
-    console.log(formData.name);
-    console.log(formData.lastName);
-    console.log(formData.email);
-    console.log(formData.age);
-  }, [formData]);
+    console.log(person);
+    if (person.name) setPersons([...persons, { ...person, person }]);
+  }, [person]);
+  useEffect(() => {
+    console.log(persons);
+  }, [persons]);
+
   return (
     <>
-      <form onSubmit={handleForm}>
+      <div>
         <div>
-          <label htmlFor="fName">First Name:</label>
-          <input
-            type="text"
-            name="name"
-            value={formData.name}
-            id="fName"
-            onChange={handleChange}
-          />
+          <strong>Possible name options</strong>
+          <ol>
+            {names.map((name, index) => (
+              <li key={index}>{name}</li>
+            ))}
+          </ol>
         </div>
         <div>
-          <label htmlFor="lName">Last Name:</label>
-          <input
-            type="text"
-            name="lastName"
-            value={formData.lastName}
-            id="lName"
-            onChange={handleChange}
-          />
-        </div>
-        <div>
-          <label htmlFor="email">Email</label>
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            id="email"
-            onChange={handleChange}
-          />
-        </div>
-        <div>
-          <label htmlFor="age">Age</label>
-          <input
-            type="number"
-            name="age"
-            value={formData.age}
-            id="age"
-            onChange={handleChange}
-          />
+          <strong>Possible age options</strong>
+          <ul>
+            {ages.map((age, index) => (
+              <li key={index}>{age}</li>
+            ))}
+          </ul>
         </div>
 
-        <button type="submit" onClick={handleFormSubmit}>
-          Send
-        </button>
-      </form>
+        <div>
+          <strong>
+            Your random person is:{`Name:${person.name}\nAge:${person.age}`}
+          </strong>
+        </div>
+
+        <button onClick={createRandomPerson}>Random person</button>
+        <div>
+          <strong>Generated person history</strong>
+          <ol>
+            {persons.map((person, index) => (
+              <li key={index}>{`Name: ${person.name}, Age:${person.age}`}</li>
+            ))}
+          </ol>
+        </div>
+      </div>
     </>
   );
 }
