@@ -38,16 +38,18 @@ function ProveThings() {
     console.log(`Names index:${randomValueNames}`);
     console.log(`Ages index:${randomValueAges}`);
 
-    setPerson({
-      ...person,
+    const newPerson = {
       name: names[randomValueNames],
       age: ages[randomValueAges],
-    });
-  };
+    };
+    setPerson(newPerson);
 
+    setPersons([...persons, newPerson]);
+
+    // if (person.name) setPersons([...persons, newPerson]);
+  };
   useEffect(() => {
     console.log(person);
-    if (person.name) setPersons([...persons, { ...person, person }]);
   }, [person]);
   useEffect(() => {
     console.log(persons);
