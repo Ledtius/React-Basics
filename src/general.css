@@ -21,7 +21,7 @@ body {
   flex-direction: column;
   padding: 2rem;
   min-width: 320px;
-  background-color: #000036;
+  background-color: #fff;
 }
 
 h1 {
@@ -46,31 +46,3 @@ h4 {
   --todo-list-tertiary: white;
   --todo-list-shadow: 0 4px 1px rgb(177, 177, 177);
 }
-
-.todo-list {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  width: fit-content;
-}
-
-.todo-list__title {
-  margin: 0;
-  color: var(--todo-list-secondary);
-}
-
-.todo-list__content {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-
-/* 
-.container {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  gap: 2rem;
-} */
