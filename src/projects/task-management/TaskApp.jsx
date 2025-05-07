@@ -1,3 +1,13 @@
-export const TaskApp = () => {
-  return <h3>Hola2</h3>;
+import FormTask from "./components/FormTask";
+import ListTask from "./components/ListTask";
+
+const TaskApp = () => {
+  return (
+    <>
+      <FormTask />
+      <ListTask />
+    </>
+  );
 };
+
+export default TaskApp;
