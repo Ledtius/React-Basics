@@ -7,7 +7,7 @@ import { createRoot } from "react-dom/client";
 import "./general.css";
 
 function App() {
-  return <h1>hola</h1>
+  return <h1>hola</h1>;
 }
 
 createRoot(document.getElementById("root")).render(
