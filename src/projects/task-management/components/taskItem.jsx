@@ -1,7 +1,20 @@
 const TaskItem = () => {
   return (
     <>
-      <h1>TaskItem</h1>
+      <li>
+        <input type="checkbox" id="checkTask" />
+        <label htmlFor="checkTask">
+          <div>
+            <strong>Name of the Task</strong>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Asperiores quaerat dolores id! Repellat necessitatibus id
+              provident cupiditate, sequi natus culpa aperiam! Hic, ea libero
+              laudantium velit doloremque blanditiis impedit quibusdam.
+            </p>
+          </div>
+        </label>
+      </li>
     </>
   );
 };
