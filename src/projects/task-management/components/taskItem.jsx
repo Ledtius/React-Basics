@@ -3,7 +3,7 @@
 const TaskItem = () => {
   return (
     <>
-      <li className="">
+      <li>
         <input type="checkbox" id="checkTask" />
         <label htmlFor="checkTask">
           <div>
