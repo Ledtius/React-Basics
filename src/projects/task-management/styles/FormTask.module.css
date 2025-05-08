@@ -24,7 +24,7 @@
 }
 
 .task-app__input {
-  width: clamp(200px, 60vw, 400px);
+  width: clamp(200px, 70vw, 400px);
 
   border-radius: 0.4rem;
   border: 1px solid var(--border);

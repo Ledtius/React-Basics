@@ -1,10 +1,15 @@
 .task-app__item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  width: clamp(260px, 90vw, 480px);
 }
 
 .task-app__checkbox {
 }
 
 .task-app__label {
+    width: 100%;
 }
 
 .task-app__label-info {
