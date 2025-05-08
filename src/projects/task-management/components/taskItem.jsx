@@ -19,7 +19,10 @@ const TaskItem = () => {
                 Name of the Task
               </strong>
               <p className={TaskItemStyles["task-app__task-description"]}>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit...
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Dignissimos eligendi ea ratione sequi porro aliquam, ipsam
+                facilis sapiente voluptates officia dolorum mollitia nesciunt
+                commodi odio voluptatibus ut. Dolorum, iste consectetur.
               </p>
             </div>
           </label>
