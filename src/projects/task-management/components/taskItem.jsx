@@ -1,21 +1,29 @@
-// import Button from `@mui/material/Button`;
+import TaskItemStyles from "../styles/TaskItem.module.css";
 
 const TaskItem = () => {
   return (
     <>
-      <li>
-        <input type="checkbox" id="checkTask" />
-        <label htmlFor="checkTask">
-          <div>
-            <strong>Name of the Task</strong>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Asperiores quaerat dolores id! Repellat necessitatibus id
-              provident cupiditate, sequi natus culpa aperiam! Hic, ea libero
-              laudantium velit doloremque blanditiis impedit quibusdam.
-            </p>
-          </div>
-        </label>
+      <li className={TaskItemStyles["task-app__item"]}>
+        <input
+          className={TaskItemStyles["task-app__checkbox"]}
+          type="checkbox"
+          id="checkTask"
+        />
+        <div className={TaskItemStyles["task-app__label"]}>
+          <label
+            htmlFor="checkTask"
+            className={TaskItemStyles["task-app__label-info"]}
+          >
+            <div className={TaskItemStyles["task-app__info"]}>
+              <strong className={TaskItemStyles["task-app__task-name"]}>
+                Name of the Task
+              </strong>
+              <p className={TaskItemStyles["task-app__task-description"]}>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit...
+              </p>
+            </div>
+          </label>
+        </div>
       </li>
     </>
   );
