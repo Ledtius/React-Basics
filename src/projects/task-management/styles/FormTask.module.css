@@ -14,6 +14,7 @@
 .task-app__title {
   font-weight: 700;
   font-size: 3.2rem;
+  padding: 2rem;
 }
 
 .task-app__input-group {
@@ -23,6 +24,8 @@
 }
 
 .task-app__input {
+  width: clamp(200px, 60vw, 400px);
+
   border-radius: 0.4rem;
   border: 1px solid var(--border);
   padding: 1rem;
