@@ -4,8 +4,10 @@ import "./styles/TaskApp.css";
 const TaskApp = () => {
   return (
     <>
-      <FormTask />
-      <IncompleteTasks />
+      <div className="body">
+        <FormTask />
+        <IncompleteTasks />
+      </div>
     </>
   );
 };
