@@ -6,13 +6,8 @@ import "./general.css";
 
 import TaskApp from "./projects/task-management/TaskApp";
 
-function App() {
-  return <h1>hola</h1>;
-}
-
 createRoot(document.getElementById("root")).render(
   <>
     <TaskApp />
-    <App />
   </>
 );
