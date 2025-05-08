@@ -4,7 +4,7 @@ import "./styles/TaskApp.css";
 const TaskApp = () => {
   return (
     <>
-      <div className="body">
+      <div className="task-app">
         <FormTask />
         <IncompleteTasks />
       </div>
