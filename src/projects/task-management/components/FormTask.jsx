@@ -1,9 +1,16 @@
 const FormTask = () => {
+  const handleForm = (e) => {
+    e.preventDefault();
+  };
   return (
     <>
-      <h1>
-        ssfs
-      </h1>
+      <form onSubmit={handleForm}>
+        <div>
+          <label htmlFor="bar">Lista de tareas</label>
+          <input type="text" id="bar" />
+        </div>
+        <button>Enviar</button>
+      </form>
     </>
   );
 };
