@@ -1,9 +1,20 @@
 .task-app__item {
+  background-color: var(--bg-task);
+  color: var(--text);
   display: flex;
   align-items: center;
   width: 100%;
   width: clamp(260px, 90vw, 480px);
-  gap: 2rem;
+  gap: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: 0.2s box-shadow ease-in;
+  border-radius: 1rem;
+  /* padding: 2rem; */
+  padding: 1rem 1.5rem;
+}
+
+.task-app__item:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
 }
 
 .task-app__checkbox {
@@ -23,6 +34,7 @@
 
 .task-app__task-description {
   margin: 0;
-  max-height: 2rem;
+  scrollbar-width: thin;
+  max-height: 4rem;
   overflow-y: auto;
 }
