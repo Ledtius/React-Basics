@@ -1,11 +1,11 @@
 import FormTask from "./components/FormTask";
-import ListTask from "./components/ListTask";
+import IncompleteTasks from "./components/IncompleteTasks.jsx";
 
 const TaskApp = () => {
   return (
     <>
       <FormTask />
-      <ListTask />
+      <IncompleteTasks />
     </>
   );
 };
