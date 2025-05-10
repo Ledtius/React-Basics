@@ -33,4 +33,13 @@
 }
 
 .task-app__button {
+  background-color: var(--btn);
+  color: white;
+  padding: 1rem;
+
+  transition: hover 0.4s ease;
+}
+
+.task-app__button:hover {
+  background-color: var(--hover-btn);
 }
