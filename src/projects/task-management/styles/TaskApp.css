@@ -24,6 +24,7 @@ ul {
 li {
   list-style: none;
 }
+
 :root {
   --background: #f0f2f5;
   --text: #333333;
