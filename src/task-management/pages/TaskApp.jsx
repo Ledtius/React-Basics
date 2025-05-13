@@ -1,10 +1,9 @@
+import FormTask from "../components/FormTask/FormTask.jsx";
+
 const TaskApp = () => {
   return (
     <>
-      <div className="task-app">
-        <FormTask />
-        <IncompleteTasks />
-      </div>
+      <FormTask />
     </>
   );
 };
