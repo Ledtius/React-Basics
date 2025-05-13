@@ -6,13 +6,10 @@ const TaskList = () => {
   return (
     <>
       <div className={TaskListStyles.taskList}>
-        <h2>asds</h2>
-
-        <h2>asds</h2>
-        <h2>asds</h2>
-        <button className={TaskListStyles.deleteAllBtn}>
-          <LucideListX className={TaskListStyles.deleteIcon} />
-        </button>
+      <h2>asds</h2>
+      <h2>asds</h2>
+      <h2>asds</h2>
+      <h2>asds</h2>
       </div>
     </>
   );

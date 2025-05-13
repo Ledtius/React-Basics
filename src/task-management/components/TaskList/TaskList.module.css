@@ -5,37 +5,5 @@
   gap: 2rem;
   border: 1px solid red;
   min-height: 40rem;
-  position: relative;
   z-index: 1;
-}
-
-.deleteAllBtn {
-  position: absolute;
-  bottom: -7rem;
-  right: -7rem;
-  z-index: 2;
-  border-radius: 100%;
-  display: flex;
-  align-items: center;
-  padding: 1.6rem;
-  background-color: var(--color-white);
-  border: none;
-  box-shadow: var(--shadow-button);
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.deleteAllBtn:hover {
-  background-color: var(--color-bg-delete-task);
-  box-shadow: var(--shadow-button-hover);
-}
-
-.deleteIcon {
-  stroke: var(--color-bg-delete-task);
-  transition: all 0.3s ease;
-}
-
-.deleteAllBtn:hover .deleteIcon {
-  stroke: var(--color-white);
-  transition: all 0.3s ease;
 }
