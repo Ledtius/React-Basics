@@ -1,0 +1,62 @@
+:root {
+  /* Fondos generales */
+  --color-bg: #f4f4f4;
+  --color-bg-input: #fff;
+  --color-bg-input-edit: #f5f5f5;
+
+  /* Textos */
+  --color-text-primary: #2e2e2e;
+  --color-text-input: #1f1f1f;
+  --color-text-tooltip: #2e2e2e;
+  --color-text-description-placeholder: #a9a9a9;
+
+  /* Estados de tarea */
+  --color-bg-all: #a9a9a9;
+  --color-bg-completed: #2ecc71;
+  --color-bg-incomplete: #606060;
+  --color-bg-unchecked: #cfd5db;
+
+  /* Botones */
+  --color-bg-send: #1e90ff;
+  --color-bg-save: #0d6efd;
+  --color-bg-cancel: #d9534f;
+  --color-bg-delete-description: #dc3545;
+  --color-bg-delete-task: #b22222;
+
+  /* Íconos */
+  --color-icon-edit: #5a6268;
+  --color-icon-add: #4e4e4e;
+
+  /* Tooltips */
+  --color-bg-tooltip: #b0b0b0;
+
+  /* Bordes y radios */
+  --border-radius-btn: 0.8rem;
+  --border-input: 1px solid #44444483;
+
+  /* Utilidad */
+  --color-white: #fff;
+
+  /* Sombras */
+
+  --shadow-input: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-focus: 0 2px 6px rgba(0, 123, 255, 0.25);
+  --shadow-button: 0 2px 4px rgba(0, 0, 0, 0.15);
+  --shadow-card: 0 1px 4px rgba(0, 0, 0, 0.08);
+  --shadow-tooltip: 0 4px 10px rgba(0, 0, 0, 0.15);
+
+  /* Hovers de botones */
+
+  --hover-send-btn: #1c86ee;
+  --hover-save-btn: #0b5ed7;
+  --hover-cancel-btn: #c9302c;
+  --hover-delete-description: #bb2d3b;
+  --hover-delete-task: #9b1c1c;
+
+  /* Sombras hover de botones */
+  --shadow-hover-send-btn: 0 4px 8px rgba(30, 144, 255, 0.3);
+  --shadow-hover-save-btn: 0 4px 8px rgba(13, 110, 253, 0.3);
+  --shadow-hover-cancel-btn: 0 4px 8px rgba(217, 83, 79, 0.3);
+  --shadow-hover-delete-description: 0 4px 8px rgba(220, 53, 69, 0.3);
+  --shadow-hover-delete-task: 0 4px 8px rgba(178, 34, 34, 0.3);
+}
