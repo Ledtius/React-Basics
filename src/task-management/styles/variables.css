@@ -59,4 +59,8 @@
   --shadow-hover-cancel-btn: 0 4px 8px rgba(217, 83, 79, 0.3);
   --shadow-hover-delete-description: 0 4px 8px rgba(220, 53, 69, 0.3);
   --shadow-hover-delete-task: 0 4px 8px rgba(178, 34, 34, 0.3);
+
+  /* Width flexible */
+
+  --flex-width: clamp(300px, 80vw, 500px);
 }
