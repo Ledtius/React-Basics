@@ -4,6 +4,8 @@ import FormTask from "../components/FormTask/FormTask.jsx";
 
 import TaskList from "../components/TaskList/TaskList.jsx";
 
+import TaskFilter from "../components/TaskFilter/TaskFilter.jsx";
+
 import { LucideListX } from "lucide-react";
 
 const TaskApp = () => {
@@ -24,6 +26,9 @@ const TaskApp = () => {
           taskList={taskList}
           setTaskList={setTaskList}
         />
+
+        <TaskFilter />
+
         <TaskList />
         <button className="deleteAllBtn">
           <LucideListX className="deleteIcon" />
