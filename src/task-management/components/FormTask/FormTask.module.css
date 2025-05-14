@@ -9,6 +9,8 @@
 
 .title {
   margin: 0;
+  font-size: 4rem;
+  text-align: center;
 }
 .inputBtn {
   display: flex;
@@ -18,6 +20,7 @@
 }
 .input {
   padding: 1.6rem;
+  padding-right: 5rem;
   border: transparent;
   border-radius: var(--border-radius-btn);
   /* border: var(--border-input); */
@@ -35,11 +38,12 @@
   background-color: var(--color-bg-send);
   transition: all 0.4 ease;
   position: absolute;
-  right: -2px;
+  right: -5px;
   display: flex;
   align-items: center;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.1s ease;
+  box-shadow: var(--shadow-button);
 }
 
 .btn:hover {
@@ -48,7 +52,7 @@
 }
 
 .btn:active {
-  background-color: transparent;
+  background-color: var(--color-white);
 }
 .btn:active .icon {
   stroke: var(--color-bg-send);
