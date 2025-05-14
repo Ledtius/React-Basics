@@ -35,14 +35,24 @@
   background-color: var(--color-bg-send);
   transition: all 0.4 ease;
   position: absolute;
-  right: 0;
+  right: -2px;
   display: flex;
   align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .btn:hover {
   background-color: var(--hover-send-btn);
   box-shadow: var(--shadow-hover-send-btn);
+}
+
+.btn:active {
+  background-color: transparent;
+}
+.btn:active .icon {
+  stroke: var(--color-bg-send);
+  transition: all 0.3s ease;
 }
 
 .icon {

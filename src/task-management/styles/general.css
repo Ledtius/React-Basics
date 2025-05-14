@@ -54,6 +54,14 @@ html {
   transition: all 0.3s ease;
 }
 
+.deleteAllBtn:active {
+  background-color: transparent;
+  box-shadow: inset 0 0 0 2px var(--color-bg-delete-task);
+}
+.deleteAllBtn:active .deleteIcon {
+  stroke: var(--color-bg-delete-task);
+}
+
 body {
   margin: 0;
   padding: 2rem;
