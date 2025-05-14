@@ -1,0 +1,130 @@
+.filter {
+  display: flex;
+  justify-content: space-between;
+  /* background-color: red; */
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  border: transparent;
+  padding: 0.6rem;
+  border-radius: var(--border-radius-btn);
+  box-shadow: var(--shadow-button);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn:nth-child(1) {
+  background-color: var(--color-bg-all);
+}
+.btn:nth-child(2) {
+  background-color: var(--color-bg-incomplete);
+}
+.btn:nth-child(3) {
+  background-color: var(--color-bg-completed);
+}
+
+.btn:hover {
+  transform: scale(0.98);
+  transition: all 0.2s ease;
+}
+
+.btn:focus {
+  outline: none;
+  transform: scale(1.02);
+  transition: all 0.2s ease;
+}
+
+.btn:nth-child(1):focus {
+  box-shadow: var(--shadow-all);
+}
+
+.btn:nth-child(2):focus {
+  box-shadow: var(--shadow-incomplete);
+}
+
+.btn:nth-child(3):focus {
+  box-shadow: var(--shadow-completed);
+}
+
+.filterBtn:focus .filterIcon {
+  /* stroke: var(--color-primary); */
+  transform: scale(4);
+  transition: all 0.3s ease;
+}
+
+.icon {
+  stroke: var(--color-white);
+}
+
+.text {
+  font-weight: 600;
+  color: var(--color-white);
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* width: 100%; */
+  width: var(flex-width);
+  position: relative;
+}
+
+.input {
+  width: 100%;
+  box-shadow: var(--shadow-input);
+  padding: 0.7rem;
+  border-radius: var(--border-radius-btn);
+  border: transparent;
+  /* border: var(--border-input); */
+}
+
+.formBtn {
+  padding: 0.4rem 1rem;
+  border-radius: var(--border-radius-btn);
+  border: 1px solid var(--color-bg-send);
+  background-color: var(--color-bg-send);
+  position: absolute;
+  right: -5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-button);
+  transition: all 0.3s ease;
+}
+
+.formIcon {
+  width: 1.3rem;
+  stroke: var(--color-white);
+}
+
+.formBtn:hover {
+  background-color: var(--hover-send-btn);
+  box-shadow: var(--shadow-hover-send-btn);
+}
+
+.formBtn:active .formIcon {
+  stroke: var(--color-bg-send);
+  transition: all 0.1s ease;
+}
+
+.formBtn:active {
+  background-color: var(--color-white);
+}
+
+@media (max-width: 420px) {
+  /* .text {
+    display: none;
+  } */
+
+  .btn {
+    max-width: 10rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+}
