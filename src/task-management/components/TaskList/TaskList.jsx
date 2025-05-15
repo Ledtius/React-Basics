@@ -1,15 +1,15 @@
 import TaskListStyles from "../TaskList/TaskList.module.css";
 
-import { LucideListX } from "lucide-react";
+import TaskItem from "../TaskItem/TaskItem.jsx";
 
 const TaskList = () => {
   return (
     <>
       <div className={TaskListStyles.taskList}>
-      <h2>asds</h2>
-      <h2>asds</h2>
-      <h2>asds</h2>
-      <h2>asds</h2>
+        <TaskItem />
+        <TaskItem />
+        <TaskItem />
+        <TaskItem />
       </div>
     </>
   );
