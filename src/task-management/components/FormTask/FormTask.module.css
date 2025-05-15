@@ -25,6 +25,7 @@
   border-radius: var(--border-radius-btn);
   /* border: var(--border-input); */
   width: var(--flex-width);
+  transition: all 0.3s ease;
 }
 
 .input:focus {
