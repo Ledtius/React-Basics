@@ -68,5 +68,5 @@
 
   /* Width flexible */
 
-  --flex-width: clamp(300px, 80vw, 340px);
+  --flex-width: clamp(340px, 90vw, 367.328px);
 }
