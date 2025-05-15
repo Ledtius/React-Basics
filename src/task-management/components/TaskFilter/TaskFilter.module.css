@@ -82,6 +82,12 @@
   /* border: var(--border-input); */
 }
 
+.input:focus {
+  outline: none;
+  box-shadow: var(--shadow-focus);
+  /* border: var(--border-input); */
+}
+
 .formBtn {
   padding: 0.4rem 1rem;
   border-radius: var(--border-radius-btn);
