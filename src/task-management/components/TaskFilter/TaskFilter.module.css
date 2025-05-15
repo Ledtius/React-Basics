@@ -1,7 +1,14 @@
+.filterForm{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+}
+
 .filter {
+  width: 100%;
   display: flex;
   justify-content: space-between;
-  /* background-color: red; */
 }
 
 .btn {
@@ -69,12 +76,14 @@
   align-items: center;
   justify-content: center;
   /* width: 100%; */
-  width: var(flex-width);
+  /* width: var(flex-width); */
+  width: var(--flex-width);
+
   position: relative;
 }
 
 .input {
-  width: 100%;
+  width: var(--flex-width);
   box-shadow: var(--shadow-input);
   padding: 0.7rem;
   border-radius: var(--border-radius-btn);
