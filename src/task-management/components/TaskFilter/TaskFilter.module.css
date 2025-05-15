@@ -1,8 +1,7 @@
-.filterForm{
+.filterForm {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-
 }
 
 .filter {
@@ -83,9 +82,11 @@
 }
 
 .input {
+  padding-left: 1.6rem;
+  padding-right: 1.6rem;
   width: var(--flex-width);
   box-shadow: var(--shadow-input);
-  padding: 0.7rem;
+  padding: 0.7rem 3.5rem 0.7rem 1.6rem;
   border-radius: var(--border-radius-btn);
   border: transparent;
   /* border: var(--border-input); */
