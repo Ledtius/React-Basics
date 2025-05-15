@@ -16,7 +16,7 @@ html {
   align-items: center;
   flex-direction: column;
   justify-content: space-between;
-  gap: 8rem;
+  gap: 10rem;
 }
 
 .taskApp {
