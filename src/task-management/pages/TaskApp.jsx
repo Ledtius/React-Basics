@@ -6,6 +6,8 @@ import TaskFilter from "../components/TaskFilter/TaskFilter.jsx";
 
 import TaskList from "../components/TaskList/TaskList.jsx";
 
+import Footer from "../components/Footer/Footer.jsx";
+
 import { LucideListX } from "lucide-react";
 
 const TaskApp = () => {
@@ -19,20 +21,23 @@ const TaskApp = () => {
 
   return (
     <>
-      <div className="taskApp">
-        <FormTask
-          task={task}
-          setTask={setTask}
-          taskList={taskList}
-          setTaskList={setTaskList}
-        />
+      <div className="tasAppFooter">
+        <div className="taskApp">
+          <FormTask
+            task={task}
+            setTask={setTask}
+            taskList={taskList}
+            setTaskList={setTaskList}
+          />
 
-        <TaskFilter />
+          <TaskFilter />
 
-        <TaskList />
-        <button className="deleteAllBtn">
-          <LucideListX className="deleteIcon" />
-        </button>
+          <TaskList />
+          <button className="deleteAllBtn">
+            <LucideListX className="deleteIcon" />
+          </button>
+        </div>
+        <Footer />
       </div>
     </>
   );
