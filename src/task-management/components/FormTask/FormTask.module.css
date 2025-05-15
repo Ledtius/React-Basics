@@ -28,7 +28,7 @@
 }
 
 .input:focus {
-  box-shadow: var(--shadow-input);
+  box-shadow: var(--shadow-focus);
 }
 
 .btn {
