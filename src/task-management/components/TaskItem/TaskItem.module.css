@@ -1,0 +1,142 @@
+.task {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  background-color: var(--color-white);
+  padding: 2rem;
+  width: var(--flex-width);
+  box-shadow: var(--shadow-card);
+  border-radius: var(--border-radius-btn);
+  transition: all 0.2s ease-in-out;
+}
+
+.task:hover {
+  box-shadow: var(--shadow-hover-send-btn);
+  transform: scale(1.02);
+}
+
+.information {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  max-width: 19rem;
+  width: 100%;
+  gap: 0.8rem;
+}
+
+.titleIcon {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.titleIcon:hover {
+  transform: scale(1.02);
+}
+
+.titleIcon:hover .editIcon {
+  opacity: 1;
+}
+
+.title {
+  font-size: 2rem;
+  scrollbar-width: thin;
+  max-width: 15rem;
+  /* max-height: 4rem; */
+  overflow: auto;
+  color: var(--color-text-primary);
+}
+
+.editIcon {
+  opacity: 0.5;
+  stroke: var(--color-icon-edit);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.plusIcon {
+  stroke: var(--color-icon-add);
+  cursor: pointer;
+}
+
+.descriptionIcon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  opacity: 0.5;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.descriptionIcon:hover {
+  opacity: 1;
+  transform: scale(1.02);
+}
+
+.descriptionContent {
+  max-width: 15rem;
+  max-height: 10rem;
+  overflow: auto;
+  scrollbar-width: thin;
+}
+
+.description {
+  font-size: small;
+  color: var(--color-description-placeholder);
+}
+
+.iconTrash {
+  width: 4rem;
+  height: 4rem;
+  stroke: var(--color-bg-delete-task);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.iconTrash:hover {
+  stroke: var(--hover-delete-task);
+  scale: 1.05;
+}
+
+.checkboxContent {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  gap: 8px;
+}
+
+.checkbox {
+  display: none;
+}
+
+.checkmark {
+  width: 30px;
+  height: 30px;
+  border: 2px solid transparent;
+  background-color: var(--color-bg-unchecked);
+  border-radius: 1rem;
+  position: relative;
+  transition: all 0.2s ease-in-out;
+  box-shadow: var(--shadow-button);
+  transition: all 0.2s ease-in-out;
+}
+
+.checkbox:checked + .checkmark::after {
+  content: "✓";
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.checkbox:checked + .checkmark {
+  background-color: #2ecc71;
+  border-color: #2ecc71;
+  transition: all 0.2s ease-in-out;
+}
