@@ -8,8 +8,11 @@ import "./task-management/styles/variables.css";
 
 import TaskApp from "./task-management/pages/TaskApp.jsx";
 
+import Footer from "./task-management/components/Footer/Footer.jsx";
+
 createRoot(document.getElementById("root")).render(
   <>
     <TaskApp />
+    <Footer></Footer>
   </>
 );
