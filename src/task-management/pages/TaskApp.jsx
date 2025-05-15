@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 
 import FormTask from "../components/FormTask/FormTask.jsx";
 
-import TaskList from "../components/TaskList/TaskList.jsx";
-
 import TaskFilter from "../components/TaskFilter/TaskFilter.jsx";
+
+import TaskList from "../components/TaskList/TaskList.jsx";
 
 import { LucideListX } from "lucide-react";
 
