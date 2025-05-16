@@ -26,7 +26,6 @@
   border-radius: var(--border-radius-btn);
   width: var(--flex-width);
   transition: all 0.3s ease;
-
 }
 
 .input::placeholder {
@@ -55,6 +54,25 @@
 
 .inputError:focus {
   box-shadow: var(--shadow-error);
+}
+.warningMessage {
+  min-height: 22px;
+  color: var(--color-bg-cancel);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  opacity: 1;
+}
+
+.iconWarning {
+  width: 1.6rem;
+  height: 1.6rem;
+}
+
+.warningMessageNone {
+  min-height: 22px;
+  /* display: none; */
+  opacity: 0;
 }
 
 .btn {

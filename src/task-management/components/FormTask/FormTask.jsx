@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 import FormStyles from "../FormTask/FormTask.module.css";
 
-import { LucideSend } from "lucide-react";
+import { LucideSend, MessageCircleWarning } from "lucide-react";
 
 const FormTask = ({ task, setTask, taskList, setTaskList }) => {
   const [taskRepeat, setTaskRepeat] = useState(false);
@@ -17,7 +17,7 @@ const FormTask = ({ task, setTask, taskList, setTaskList }) => {
 
     setTaskRepeat(taskRepeat);
     if (taskRepeat) {
-      setTask({ ...task, name: "" });
+      // setTask({ ...task, name: "" });
       setTimeout(() => {
         setTaskRepeat(false);
       }, [1000]);
@@ -57,17 +57,23 @@ const FormTask = ({ task, setTask, taskList, setTaskList }) => {
             type="text"
             name="name"
             value={task.name}
-            placeholder={
-              taskRepeat
-                ? "Nombre de tarea ya ingresado"
-                : "Digita tu tarea aqui"
-            }
+            placeholder={"Digita tu tarea aqui"}
             onChange={handleInput}
           />
           <button className={FormStyles.btn}>
             <LucideSend className={FormStyles.icon} />
           </button>
         </div>
+        <small
+          className={
+            taskRepeat
+              ? FormStyles.warningMessage
+              : FormStyles.warningMessageNone
+          }
+        >
+          <MessageCircleWarning className={FormStyles.iconWarning} />
+          Nombre anteriormente ingresado
+        </small>
       </form>
     </>
   );
