@@ -2,6 +2,16 @@ import TaskItemStyles from "../TaskItem/TaskItem.module.css";
 
 import { SquarePen, CirclePlus, Trash2 } from "lucide-react";
 
+import { Tooltip } from "react-tooltip";
+
+const tooltipStyles = {
+  backgroundColor: "var(--color-bg-tooltip)",
+  color: "var(--text-color-tooltip)",
+  padding: "0.5rem 1rem",
+  borderRadius: "8px",
+  fontSize: "1.2rem",
+};
+
 const TaskItem = () => {
   return (
     <>
@@ -16,6 +26,14 @@ const TaskItem = () => {
               Lorem ipsum dolor sit amet consectetur
             </strong>
             <SquarePen className={TaskItemStyles.editIcon} />
+
+            <Tooltip
+              id="delete-tooltip"
+              place="top-start"
+              anchorSelect={`.${TaskItemStyles.editIcon}`}
+              content="Editar tarea"
+              style={tooltipStyles}
+            />
           </div>
           <div className={TaskItemStyles.descriptionIcon}>
             <div className={TaskItemStyles.descriptionContent}>
@@ -25,11 +43,27 @@ const TaskItem = () => {
             </div>
 
             <CirclePlus className={TaskItemStyles.plusIcon} />
+
+            <Tooltip
+              id="delete-tooltip"
+              place="top-start"
+              anchorSelect={`.${TaskItemStyles.plusIcon}`}
+              content="Añadir descripción"
+              style={tooltipStyles}
+            />
           </div>
         </div>
 
-        <Trash2 className={TaskItemStyles.iconTrash} />
+        <Trash2 className={TaskItemStyles.trashIcon} />
       </div>
+
+      <Tooltip
+        id="delete-tooltip"
+        place="top-start"
+        anchorSelect={`.${TaskItemStyles.trashIcon}`}
+        content="Eliminar tarea"
+        style={tooltipStyles}
+      />
     </>
   );
 };
