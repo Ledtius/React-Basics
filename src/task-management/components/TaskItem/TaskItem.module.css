@@ -89,7 +89,7 @@
   color: var(--color-description-placeholder);
 }
 
-.iconTrash {
+.trashIcon {
   width: 4rem;
   height: 4rem;
   stroke: var(--color-bg-delete-task);
@@ -97,7 +97,7 @@
   transition: all 0.2s ease-in-out;
 }
 
-.iconTrash:hover {
+.trashIcon:hover {
   stroke: var(--hover-delete-task);
   scale: 1.05;
 }
