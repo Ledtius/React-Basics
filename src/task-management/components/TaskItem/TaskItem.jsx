@@ -12,6 +12,14 @@ const TaskItem = ({ tooltipStyles }) => {
           <input className={TaskItemStyles.checkbox} type="checkbox" />
           <span className={TaskItemStyles.checkmark}></span>
         </label>
+
+        <Tooltip
+          place="top-start"
+          anchorSelect={`.${TaskItemStyles.checkboxContent}`}
+          html="<span  style='text-align:center;display:block; width:100%;'>Estado de tarea<br/>(Click para cambiar)</span>"
+          content=""
+          style={tooltipStyles}
+        />
         <div className={TaskItemStyles.information}>
           <div className={TaskItemStyles.titleIcon}>
             <strong className={TaskItemStyles.title}>
@@ -20,8 +28,8 @@ const TaskItem = ({ tooltipStyles }) => {
             <SquarePen className={TaskItemStyles.editIcon} />
 
             <Tooltip
-              place="top-start"
-              anchorSelect={`.${TaskItemStyles.editIcon}`}
+              place="right"
+              anchorSelect={`.${TaskItemStyles.titleIcon}`}
               content="Editar tarea"
               style={tooltipStyles}
             />
@@ -35,12 +43,12 @@ const TaskItem = ({ tooltipStyles }) => {
 
             <CirclePlus className={TaskItemStyles.plusIcon} />
 
-            <Tooltip
-              place="top-start"
-              anchorSelect={`.${TaskItemStyles.plusIcon}`}
+            {/* <Tooltip
+              place="top-end"
+              anchorSelect={`.${TaskItemStyles.descriptionIcon}`}
               content="Añadir descripción"
               style={tooltipStyles}
-            />
+            /> */}
           </div>
         </div>
 
