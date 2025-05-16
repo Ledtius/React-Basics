@@ -21,10 +21,10 @@
   padding: 1.6rem;
   padding-right: 5rem;
   background: var(--color-bg-input);
+  box-shadow: var(--shadow-input);
   border: 1px solid var(--color-bg-input);
   border-radius: var(--border-radius-btn);
   width: var(--flex-width);
-  box-shadow: var(--shadow-input);
   transition: all 0.3s ease;
 
 }
