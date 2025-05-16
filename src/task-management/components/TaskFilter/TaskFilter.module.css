@@ -85,12 +85,17 @@
   padding-left: 1.6rem;
   padding-right: 1.6rem;
   width: var(--flex-width);
+  background: var(--color-bg-input);
   box-shadow: var(--shadow-input);
   padding: 0.7rem 3.5rem 0.7rem 1.6rem;
   border-radius: var(--border-radius-btn);
-  border: transparent;
+  border: 1px solid var(--color-bg-input);
   /* border: var(--border-input); */
   transition: all 0.3s ease;
+}
+
+.input::placeholder {
+  color: var(--color-text-description-placeholder);
 }
 
 .input:focus {
@@ -102,7 +107,7 @@
 .formBtn {
   padding: 0.4rem 1rem;
   border-radius: var(--border-radius-btn);
-  border: 1px solid var(--color-bg-send);
+  border: 2px solid var(--color-bg-send);
   background-color: var(--color-bg-send);
   position: absolute;
   right: -5px;
@@ -111,7 +116,7 @@
   align-items: center;
   justify-content: center;
   box-shadow: var(--shadow-button);
-  transition: all 0.3s ease;
+  transition: all 0.4s ease;
 }
 
 .formIcon {
