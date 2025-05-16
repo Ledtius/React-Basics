@@ -10,6 +10,9 @@ const TaskList = ({ tooltipStyles }) => {
         <TaskItem tooltipStyles={tooltipStyles} />
         <TaskItem tooltipStyles={tooltipStyles} />
         <TaskItem tooltipStyles={tooltipStyles} />
+        <TaskItem tooltipStyles={tooltipStyles} />
+        <TaskItem tooltipStyles={tooltipStyles} />
+ 
       </div>
     </>
   );
