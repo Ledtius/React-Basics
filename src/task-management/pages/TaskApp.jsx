@@ -10,6 +10,8 @@ import Footer from "../components/Footer/Footer.jsx";
 
 import { LucideListX } from "lucide-react";
 
+
+
 const TaskApp = () => {
   const [task, setTask] = useState({ name: "", description: "", state: false });
 
