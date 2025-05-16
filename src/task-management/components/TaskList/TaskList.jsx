@@ -2,14 +2,14 @@ import TaskListStyles from "../TaskList/TaskList.module.css";
 
 import TaskItem from "../TaskItem/TaskItem.jsx";
 
-const TaskList = () => {
+const TaskList = ({ tooltipStyles }) => {
   return (
     <>
       <div className={TaskListStyles.taskList}>
-        <TaskItem />
-        <TaskItem />
-        <TaskItem />
-        <TaskItem />
+        <TaskItem tooltipStyles={tooltipStyles} />
+        <TaskItem tooltipStyles={tooltipStyles} />
+        <TaskItem tooltipStyles={tooltipStyles} />
+        <TaskItem tooltipStyles={tooltipStyles} />
       </div>
     </>
   );
