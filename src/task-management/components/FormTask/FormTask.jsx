@@ -13,11 +13,9 @@ const FormTask = ({ task, setTask, taskList, setTaskList }) => {
     const taskRepeat = taskList.some((element) => element.name === task.name);
 
     console.log(taskRepeat);
-    //Input className
 
     setTaskRepeat(taskRepeat);
     if (taskRepeat) {
-      // setTask({ ...task, name: "" });
       setTimeout(() => {
         setTaskRepeat(false);
       }, [1000]);
