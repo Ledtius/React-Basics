@@ -42,7 +42,13 @@ const TaskApp = () => {
 
           <TaskFilter />
 
-          <TaskList tooltipStyles={tooltipStyles} />
+          <TaskList
+            tooltipStyles={tooltipStyles}
+            taskList={taskList}
+            setTaskList={setTaskList}
+            task={task}
+            setTask={setTask}
+          />
           <button className="deleteAllBtn">
             <LucideListX className="deleteIcon" />
             <Tooltip

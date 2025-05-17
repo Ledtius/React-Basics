@@ -36,14 +36,13 @@ const FormTask = ({ task, setTask, taskList, setTaskList }) => {
     setTask({ ...task, name: inputValue });
   };
 
-  useEffect(() => {
-    console.log(task);
-  }, [task]);
+  // useEffect(() => {}, [task]);
 
   useEffect(() => {
+    console.log(task);
     console.log(taskList);
     console.log(taskRepeat);
-  }, [taskList, taskRepeat]);
+  }, [task, taskList, taskRepeat]);
 
   return (
     <>

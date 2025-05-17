@@ -4,12 +4,82 @@ import { SquarePen, CirclePlus, Trash2 } from "lucide-react";
 
 import { Tooltip } from "react-tooltip";
 
-const TaskItem = ({ tooltipStyles }) => {
+import { useEffect, useState } from "react";
+
+const TaskItem = ({
+  tooltipStyles,
+  taskList,
+  setTaskList,
+  taskName,
+  task,
+  setTask,
+  taskDescription,
+  state,
+}) => {
+  const [tasKUpdate, setTaskUpdate] = useState({
+    name: "",
+    description: "",
+    state: false,
+  });
+
+  let arrayNames = [];
+  const handleCheckbox = (e) => {
+    const checkedValue = e.target.checked;
+
+    arrayNames = taskList.map((task) => task.name);
+
+    const indexPosition = arrayNames.indexOf(taskName);
+
+    console.log(arrayNames);
+
+    console.log(
+      `Name: ${taskName}\nstate: ${checkedValue}\nIndex: ${indexPosition}`
+    );
+
+    setTaskUpdate(taskList[indexPosition]);
+
+    setTaskUpdate((prev) => ({ ...prev, state: checkedValue }));
+
+    const modTask = taskList.map((task, index) => {
+      if (task.name === taskName) {
+        return {
+          ...task,
+          state: checkedValue,
+        };
+      } else {
+        return task;
+      }
+    });
+
+    const newList = taskList.map((task, index) => {
+      index !== indexPosition;
+      return [modTask, ...taskList];
+    });
+
+    console.log(newList);
+    //  setTaskList((prev)=>(
+    //   prev.map((task) =)
+
+    //  ));
+
+    console.log(modTask);
+  };
+
+  useEffect(() => {
+    console.log(tasKUpdate);
+    console.log(taskList);
+    // console.log(taskList.fill(tasKUpdate, 0));
+  }, [tasKUpdate, taskList]);
+
   return (
     <>
       <div className={TaskItemStyles.task}>
         <label className={TaskItemStyles.checkboxContent}>
-          <input className={TaskItemStyles.checkbox} type="checkbox" />
+          <input
+            className={TaskItemStyles.checkbox}
+            type="checkbox"
+            onChange={handleCheckbox}
+          />
           <span className={TaskItemStyles.checkmark}></span>
         </label>
 
@@ -22,9 +92,7 @@ const TaskItem = ({ tooltipStyles }) => {
         />
         <div className={TaskItemStyles.information}>
           <div className={TaskItemStyles.titleIcon}>
-            <strong className={TaskItemStyles.title}>
-              Lorem ipsum dolor sit amet consectetur
-            </strong>
+            <strong className={TaskItemStyles.title}>{taskName}</strong>
             <SquarePen className={TaskItemStyles.editIcon} />
 
             <Tooltip

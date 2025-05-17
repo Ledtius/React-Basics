@@ -2,17 +2,21 @@ import TaskListStyles from "../TaskList/TaskList.module.css";
 
 import TaskItem from "../TaskItem/TaskItem.jsx";
 
-const TaskList = ({ tooltipStyles }) => {
+const TaskList = ({ tooltipStyles, taskList, setTaskList, task, setTask }) => {
   return (
     <>
       <div className={TaskListStyles.taskList}>
-        <TaskItem tooltipStyles={tooltipStyles} />
-        <TaskItem tooltipStyles={tooltipStyles} />
-        <TaskItem tooltipStyles={tooltipStyles} />
-        <TaskItem tooltipStyles={tooltipStyles} />
-        <TaskItem tooltipStyles={tooltipStyles} />
-        <TaskItem tooltipStyles={tooltipStyles} />
- 
+        {taskList.map((task) => (
+          <TaskItem
+            tooltipStyles={tooltipStyles}
+            taskList={taskList}
+            setTaskList={setTaskList}
+            task={task}
+            setTask={setTaskList}
+            taskName={task.name}
+            key={task.name}
+          />
+        ))}
       </div>
     </>
   );
