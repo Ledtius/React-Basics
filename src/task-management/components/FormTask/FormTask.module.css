@@ -3,12 +3,13 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1rem;
   width: 100%;
 }
 
 .title {
   margin: 0;
+  margin-bottom: 1rem;
   font-size: 4rem;
   text-align: center;
 }
