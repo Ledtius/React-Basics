@@ -26,7 +26,7 @@ const TaskApp = () => {
   const [taskList, setTaskList] = useState([]);
 
   useEffect(() => {
-    console.log(task);
+    // console.log(task);
   }, [task]);
 
   return (

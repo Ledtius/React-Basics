@@ -12,7 +12,7 @@ const FormTask = ({ task, setTask, taskList, setTaskList }) => {
 
     const taskRepeat = taskList.some((element) => element.name === task.name);
 
-    console.log(taskRepeat);
+    // console.log(taskRepeat);
 
     setTaskRepeat(taskRepeat);
     if (taskRepeat) {
@@ -22,7 +22,7 @@ const FormTask = ({ task, setTask, taskList, setTaskList }) => {
       return;
     }
 
-    console.log(taskRepeat);
+    // console.log(taskRepeat);
 
     setTask({ ...task, name: "" });
 
@@ -31,7 +31,7 @@ const FormTask = ({ task, setTask, taskList, setTaskList }) => {
 
   const handleInput = (e) => {
     const inputValue = e.target.value;
-    console.log(inputValue);
+    // console.log(inputValue);
 
     setTask({ ...task, name: inputValue });
   };
@@ -39,9 +39,9 @@ const FormTask = ({ task, setTask, taskList, setTaskList }) => {
   // useEffect(() => {}, [task]);
 
   useEffect(() => {
-    console.log(task);
-    console.log(taskList);
-    console.log(taskRepeat);
+    // console.log(task);
+    // console.log(taskList);
+    // console.log(taskRepeat);
   }, [task, taskList, taskRepeat]);
 
   return (

@@ -30,11 +30,11 @@ const TaskItem = ({
 
     const indexPosition = arrayNames.indexOf(taskName);
 
-    console.log(arrayNames);
+    // console.log(arrayNames);
 
-    console.log(
-      `Name: ${taskName}\nstate: ${checkedValue}\nIndex: ${indexPosition}`
-    );
+    // console.log(
+    //   `Name: ${taskName}\nstate: ${checkedValue}\nIndex: ${indexPosition}`
+    // );
 
     setTaskUpdate(taskList[indexPosition]);
 
@@ -56,18 +56,18 @@ const TaskItem = ({
       return [modTask, ...taskList];
     });
 
-    console.log(newList);
+    // console.log(newList);
     //  setTaskList((prev)=>(
     //   prev.map((task) =)
 
     //  ));
 
-    console.log(modTask);
+    // console.log(modTask);
   };
 
   useEffect(() => {
-    console.log(tasKUpdate);
-    console.log(taskList);
+    // console.log(tasKUpdate);
+    // console.log(taskList);
     // console.log(taskList.fill(tasKUpdate, 0));
   }, [tasKUpdate, taskList]);
 
