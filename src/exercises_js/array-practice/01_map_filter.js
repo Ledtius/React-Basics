@@ -67,34 +67,8 @@ export const PracticeJS = () => {
   console.log(salesByProduct);
   const totalSales = salesByProduct.reduce(
     (accumulator, currentSale, index, array) => accumulator + currentSale
-
-    // console.log(
-    //   `${accumulator.price}: este es el valor del acumulador en cada iteración`
-    // );
-    // console.log(`${currentSale.price}: este es el valor del elemento`);
-    // console.log(
-    //   `accumulator.price: ${accumulator.price} + currentSale.price: ${currentSale.price}`
-    // );
-    // if (accumulator.price) {
-    //   last = accumulator.price + currentSale.price;
-    //   console.log(last);
-    // }
-    // const val1 = accumulator.price
-    //   ? accumulator.price + currentSale.price
-    //   : last + currentSale.price;
-    // console.log(val1);
-    // return accumulator.price + currentSale.price;
   );
 
   console.log(totalSales);
-  const numeros = [1, 2, 3, 4, 5];
 
-  numeros.reduce((acumulador, elemento, indice, array) => {
-    // console.log(`${acumulador}: este es el valor del acumulador en cada iteración`);
-    // console.log(`${elemento}: este es el valor del elemento`);
-    // console.log(`${indice}: este es el índice del elemento en el array`);
-    // console.log(`${array}: este es el array que estamos recorriendo`);
-
-    return acumulador + elemento;
-  }, 0);
 };
