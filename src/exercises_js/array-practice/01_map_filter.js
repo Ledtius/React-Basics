@@ -207,14 +207,19 @@ Devuelve un objeto que cuente cuántas personas hay por cada tipo de sangre. Eje
             count++;
 
             nameTimesArray = 0;
+            return { person };
           }
         }
       }
-      return people1.filter((e, i) => i !== count);
     }
   }, 0);
 
+  const otherProblem = people1.filter(
+    (person) => person !== noRepeated[0] && person !== noRepeated[1]
+  );
+
   console.log(noRepeated);
+  console.log(otherProblem);
 
   people1.forEach((element) => {
     // console.log(element);
