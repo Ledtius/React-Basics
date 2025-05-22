@@ -1,30 +1,19 @@
 export const PracticeJS = () => {
-  const persona = {
-    nombre: "Ana",
-    edad: 28,
-    direccion: {
-      ciudad: "Lima",
-      pais: "Perú",
-    },
-  };
+  const productos = [
+    { nombre: "Laptop", precio: 2500 },
+    { nombre: "Mouse", precio: 50 },
+    { nombre: "Teclado", precio: 100 },
+  ];
 
-  // Accede al nombre
-  console.log(persona.nombre);
-  console.log(persona["nombre"]);
+  // Agrega un producto
+  productos.push({ ["nombre"]: "Monitor", ["precio"]: 1000 });
 
-  // Cambia la edad a 30
-  persona.edad = 30;
-  console.log(persona.edad);
-  persona["edad"] = 30;
-  console.log(persona["edad"]);
+  console.log(productos);
+  // Elimina el segundo
+  productos.splice(1, 1);
+  console.log(productos);
 
-  // Agrega una propiedad "profesion" con valor "Ingeniera"
-  persona.profesion = "Ingenieria";
-  console.log(persona["profesion"]);
-  persona["profesion"] = "Ingenieria";
-  console.log(persona.profesion);
-
-  // Muestra la ciudad
-  console.log(persona.direccion.ciudad);
-  console.log(persona["direccion"]["ciudad"]);
+  // Cambia el precio del primero
+  productos[0]["precio"] = 2000;
+  console.log(productos);
 };
