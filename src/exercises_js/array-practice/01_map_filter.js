@@ -1,19 +1,20 @@
 export const PracticeJS = () => {
-  const productos = [
-    { nombre: "Laptop", precio: 2500 },
-    { nombre: "Mouse", precio: 50 },
-    { nombre: "Teclado", precio: 100 },
-  ];
+  let numeros = [1, 2, 3, 4, 5];
 
-  // Agrega un producto
-  productos.push({ ["nombre"]: "Monitor", ["precio"]: 1000 });
+  // Agrega el número 6 al final
+  numeros.push(6);
+  console.log(numeros);
 
-  console.log(productos);
-  // Elimina el segundo
-  productos.splice(1, 1);
-  console.log(productos);
+  // Elimina el primer número
+  numeros.pop();
+  console.log(numeros);
 
-  // Cambia el precio del primero
-  productos[0]["precio"] = 2000;
-  console.log(productos);
+  // Inserta el número 99 en la posición 2 (sin eliminar ninguno)
+  numeros.splice(2, 0, 99);
+  console.log(numeros);
+
+  // Crea una copia del array desde el índice 1 al 3
+
+  const copy = numeros.splice(0, 4);
+  console.log(copy);
 };
