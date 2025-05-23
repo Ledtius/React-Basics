@@ -1,28 +1,32 @@
 export const PracticeJS = () => {
-  const user = {
-    name: "Sophie",
-    city: "Paris",
-    age: 32,
-  };
+  const students = [
+    { name: "Daniel", grade: 14 },
+    { name: "Isabella", grade: 19 },
+    { name: "Tom", grade: 11 },
+    { name: "Sophia", grade: 17 },
+  ];
 
-  // Clone the user and add a new property: "isAdmin: true"
+  /*
+1. Create a new array with only the names of the students.
+2. Filter only those who passed (grade >= 14).
+3. Use `reduce()` to calculate the average grade of the class.
+4. Use `some()` to check if any student got more than 18.
+*/
 
-  // Don't modify the original object
+  const studentsNames = students.map((student) => student.name);
 
-  const userClone = { ...user, ["isAdmin"]: true };
+  console.log(studentsNames);
 
-  console.log(userClone);
+  const studentsPassed = students.filter((student) => student.grade >= 14);
 
-  const grades = [100, 90, 85, 80, 75];
+  console.log(studentsPassed);
 
-  // Use destructuring to get the first two grades in variables,
-  const [firstGrade, secondGrade] = grades;
+  const studentsAverage =
+    students.reduce((acc, student) => acc + student.grade, 0) / students.length;
 
-  console.log(firstGrade, secondGrade);
+  console.log(studentsAverage);
 
-  // and the rest in a new array called `remainingGrades`
+  const greaterEighteen = students.some((student) => student.grade > 18);
 
-  const [fiG, seG, ...remainingGrades] = grades;
-
-  console.log(remainingGrades);
+  console.log(greaterEighteen);
 };
