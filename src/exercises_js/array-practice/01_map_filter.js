@@ -1,32 +1,18 @@
 export const PracticeJS = () => {
-  const empresa = {
-    nombre: "TechCorp",
-    empleados: [
-      {
-        nombre: "Carlos",
-        cargo: "Desarrollador",
-        habilidades: ["JS", "React"],
-      },
-      {
-        nombre: "Ana",
-        cargo: "Diseñadora",
-        habilidades: ["Figma", "Photoshop"],
-      },
-    ],
+  const persona = {
+    nombre: "Laura",
+    edad: 29,
+    ciudad: "Bogotá",
   };
 
-  // Muestra el nombre del segundo empleado
+  // Usa destructuring para obtener nombre y edad
+  const { nombre, edad } = persona;
 
-  console.log(empresa["empleados"][1]["nombre"]);
+  console.log(nombre, edad);
 
-  // Agrega "TypeScript" a las habilidades de Carlos
-  empresa["empleados"][0]["habilidades"].push("TypeScript");
-  console.log(empresa["empleados"][0]["habilidades"]);
+  // Usa spread para clonar el objeto y agregar una propiedad "profesion"
 
-  // Crea un array con todos los nombres de empleados
-  const nombresEmpleados = empresa.empleados.map((empleado) => {
-    return empleado["nombre"];
-  });
+  const clon = { ...persona, ["profesion"]: "Ingeniero" };
 
-  console.log(nombresEmpleados);
+  console.log(clon);
 };
