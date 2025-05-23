@@ -1,21 +1,28 @@
 export const PracticeJS = () => {
-  const items = [
-    { name: "Book", price: 12.5 },
-    { name: "Pen", price: 1.75 },
-    { name: "Notebook", price: 6.3 },
-  ];
+  const user = {
+    name: "Sophie",
+    city: "Paris",
+    age: 32,
+  };
 
-  // Use `reduce()` to calculate the average price of all items
+  // Clone the user and add a new property: "isAdmin: true"
 
-  const averagePrice =
-    items.reduce((acc, item) => acc + item.price, 0) / items.length;
+  // Don't modify the original object
 
-  const averagePrice1 =
-    items.reduce((acc, item) => {
-      acc = acc + item.price;
-      return acc;
-    }, 0) / items.length;
+  const userClone = { ...user, ["isAdmin"]: true };
 
-  console.log(averagePrice);
-  console.log(averagePrice1);
+  console.log(userClone);
+
+  const grades = [100, 90, 85, 80, 75];
+
+  // Use destructuring to get the first two grades in variables,
+  const [firstGrade, secondGrade] = grades;
+
+  console.log(firstGrade, secondGrade);
+
+  // and the rest in a new array called `remainingGrades`
+
+  const [fiG, seG, ...remainingGrades] = grades;
+
+  console.log(remainingGrades);
 };
