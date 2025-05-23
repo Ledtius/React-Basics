@@ -1,20 +1,16 @@
 export const PracticeJS = () => {
-  let numeros = [1, 2, 3, 4, 5];
+  const frutas = ["melocoton", "banana", "mango", "piña"];
 
-  // Agrega el número 6 al final
-  numeros.push(6);
-  console.log(numeros);
+  // Recorre el array y muestra cada fruta en mayúsculas con forEach
 
-  // Elimina el primer número
-  numeros.pop();
-  console.log(numeros);
+  frutas.forEach((fruta) => {
+    console.log(fruta.toUpperCase());
+  });
+  
+  // Crea un nuevo array que tenga solo las frutas que terminan en "a"
+  const newFrutas = frutas.filter((fruta) =>
+    fruta[fruta.length - 1].includes("a")
+  );
+  console.log(newFrutas);
 
-  // Inserta el número 99 en la posición 2 (sin eliminar ninguno)
-  numeros.splice(2, 0, 99);
-  console.log(numeros);
-
-  // Crea una copia del array desde el índice 1 al 3
-
-  const copy = numeros.splice(0, 4);
-  console.log(copy);
 };
