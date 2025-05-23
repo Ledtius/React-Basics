@@ -1,15 +1,33 @@
 export const PracticeJS = () => {
-  const animals = ["dog", "cat", "panda", "koala", "wolf"];
-  // Create a new array with animals whose name ends with "a"
+  const company = {
+    name: "InnovaTech",
+    employees: [
+      { name: "Alice", skills: ["HTML", "CSS"] },
+      { name: "Bob", skills: ["Python", "Django"] },
+    ],
+  };
 
-  const animalsEndedA = animals.filter((animal) => animal.endsWith("a"));
+  // 1. Add "JavaScript" to Alice's skills
 
-  console.log(animalsEndedA);
+  company["employees"][0]["skills"].push("JavaScript");
 
-  const scores = [67, 89, 94, 76, 82];
-  // Use `some()` to check if there is any score higher than 90
+  //or
+  // company.employees[0].skills.push("JavaScript");
 
-  const isGreaterThan90 = scores.some((score) => score > 90);
+  console.log(company["employees"][0]);
+  // 2. Print Bob's second skill
 
-  console.log(isGreaterThan90);
+  console.log(company["employees"][1]["skills"][1]);
+
+  const team = [
+    { name: "Emma", role: "Designer" },
+    { name: "Liam", role: "Developer" },
+    { name: "Olivia", role: "Project Manager" },
+  ];
+
+  // Create a new array with only the names
+
+  const membersTeamNames = team.map((member) => member.name);
+
+  console.log(membersTeamNames);
 };
