@@ -1,18 +1,15 @@
 export const PracticeJS = () => {
-  const colors = ["red", "blue", "green", "yellow", "purple"];
-  // 1. Remove the first element
+  const animals = ["dog", "cat", "panda", "koala", "wolf"];
+  // Create a new array with animals whose name ends with "a"
 
-  colors.shift();
-  // 2. Remove the last element
-  colors.pop();
-  // 3. Print the final array
-  console.log(colors);
+  const animalsEndedA = animals.filter((animal) => animal.endsWith("a"));
 
-  const numbers = [10, 20, 30, 40, 50, 60];
+  console.log(animalsEndedA);
 
-  // Create a new array that contains only the elements from index 2 to 4 (inclusive)
-  const newNumbers = numbers.slice(2, 5);
+  const scores = [67, 89, 94, 76, 82];
+  // Use `some()` to check if there is any score higher than 90
 
-  console.log(newNumbers);
-  console.log(numbers);
+  const isGreaterThan90 = scores.some((score) => score > 90);
+
+  console.log(isGreaterThan90);
 };
