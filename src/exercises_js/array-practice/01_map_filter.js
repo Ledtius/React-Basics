@@ -1,33 +1,21 @@
 export const PracticeJS = () => {
-  const company = {
-    name: "InnovaTech",
-    employees: [
-      { name: "Alice", skills: ["HTML", "CSS"] },
-      { name: "Bob", skills: ["Python", "Django"] },
-    ],
-  };
-
-  // 1. Add "JavaScript" to Alice's skills
-
-  company["employees"][0]["skills"].push("JavaScript");
-
-  //or
-  // company.employees[0].skills.push("JavaScript");
-
-  console.log(company["employees"][0]);
-  // 2. Print Bob's second skill
-
-  console.log(company["employees"][1]["skills"][1]);
-
-  const team = [
-    { name: "Emma", role: "Designer" },
-    { name: "Liam", role: "Developer" },
-    { name: "Olivia", role: "Project Manager" },
+  const items = [
+    { name: "Book", price: 12.5 },
+    { name: "Pen", price: 1.75 },
+    { name: "Notebook", price: 6.3 },
   ];
 
-  // Create a new array with only the names
+  // Use `reduce()` to calculate the average price of all items
 
-  const membersTeamNames = team.map((member) => member.name);
+  const averagePrice =
+    items.reduce((acc, item) => acc + item.price, 0) / items.length;
 
-  console.log(membersTeamNames);
+  const averagePrice1 =
+    items.reduce((acc, item) => {
+      acc = acc + item.price;
+      return acc;
+    }, 0) / items.length;
+
+  console.log(averagePrice);
+  console.log(averagePrice1);
 };
