@@ -28,17 +28,16 @@ export const PracticeJS = () => {
 
   // Usa some para saber si alguien sacó más de 18
 
-  estudiantes.some((estudiante) => console.log(estudiante > 18));
+  const mayorA18 = estudiantes.some((estudiante) => estudiante > 18);
 
+  console.log(mayorA18);
   // Usa reduce para sacar el promedio de notas
 
-  const adsd = estudiantes.reduce((acu, estudiante, index, array) => {
+  const promedio = estudiantes.reduce((acu, estudiante, index, array) => {
     const nota = estudiante.nota;
-    console.log(nota);
-    acu = acu + nota / 4;
-
-    console.log(array.length);
+    acu = acu + nota;
+    if (index >= array.length - 1) return acu / 4;
     return acu;
   }, 0);
-  console.log(adsd);
+  console.log(promedio);
 };
