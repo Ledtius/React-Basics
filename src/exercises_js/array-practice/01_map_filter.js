@@ -1,18 +1,18 @@
 export const PracticeJS = () => {
-  const persona = {
-    nombre: "Laura",
-    edad: 29,
-    ciudad: "Bogotá",
-  };
+  const numeros = [10, 20, 30, 40];
 
-  // Usa destructuring para obtener nombre y edad
-  const { nombre, edad } = persona;
+  // Usa destructuring para obtener los dos primeros números
+  const [index1, index2] = numeros;
 
-  console.log(nombre, edad);
+  console.log(index1);
+  console.log(index2);
 
-  // Usa spread para clonar el objeto y agregar una propiedad "profesion"
+  // Usa rest para guardar el resto en otra variable
 
-  const clon = { ...persona, ["profesion"]: "Ingeniero" };
+  const [in1, in2, ...res] = numeros;
 
-  console.log(clon);
+  console.log(res);
+  // Crea una copia del array y agrega 50 al final usando spread
+  const copy = [...numeros, 60];
+  console.log(copy);
 };
