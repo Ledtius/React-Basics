@@ -1,18 +1,18 @@
 export const PracticeJS = () => {
-  const numeros = [10, 20, 30, 40];
+  const colors = ["red", "blue", "green", "yellow", "purple"];
+  // 1. Remove the first element
 
-  // Usa destructuring para obtener los dos primeros números
-  const [index1, index2] = numeros;
+  colors.shift();
+  // 2. Remove the last element
+  colors.pop();
+  // 3. Print the final array
+  console.log(colors);
 
-  console.log(index1);
-  console.log(index2);
+  const numbers = [10, 20, 30, 40, 50, 60];
 
-  // Usa rest para guardar el resto en otra variable
+  // Create a new array that contains only the elements from index 2 to 4 (inclusive)
+  const newNumbers = numbers.slice(2, 5);
 
-  const [in1, in2, ...res] = numeros;
-
-  console.log(res);
-  // Crea una copia del array y agrega 50 al final usando spread
-  const copy = [...numeros, 60];
-  console.log(copy);
+  console.log(newNumbers);
+  console.log(numbers);
 };
