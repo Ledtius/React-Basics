@@ -1,13 +1,14 @@
 export const PracticeJS = () => {
-  const user = {
-    name: "Sophie",
-    city: "Paris",
-    age: 32,
-  };
+  const grades = [100, 90, 85, 80, 75];
 
-  // Clone the user and add a new property: "isAdmin: true"
-  // Don't modify the original object
-  const cloneUser = { ...user, ["isAdmin"]: true };
+  // Use destructuring to get the first two grades in variables
+  // and the rest in a new array called `remainingGrades`
 
-  console.log(cloneUser);
+  const [gradeOne, gradeTwo] = grades;
+
+  console.log(gradeOne, gradeTwo);
+
+  const [, , ...remainingGrades] = grades;
+
+  console.log(remainingGrades);
 };
