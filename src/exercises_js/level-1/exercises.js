@@ -1,18 +1,14 @@
 export const PracticeJS = () => {
-  const clients = [
-    { id: 1, name: "Alice" },
-    { id: 2, name: "Bob" },
-    { id: 3, name: "Charlie" },
+  const users = [
+    { name: "Daniel", skills: ["HTML", "CSS", "React"] },
+    { name: "Sophia", skills: ["Python", "Django"] },
+    { name: "Liam", skills: ["JavaScript", "React", "Node.js"] },
   ];
 
-  // ✅ Add a new property "status: 'active'" to each client
-  // ✅ Do NOT modify the original
+  // ✅ Filter users who have "React" in their skills
+  // ✅ Return a new array with objects: { name, totalSkills }
 
-  const duplicateClients = clients.map((client) => ({
-    ...clients,
-    status: "active",
-  }));
+  const reactUsers = users.filter((user) => user.skills.includes("React"));
 
-  console.log(clients);
-  console.log(duplicateClients);
+  console.log(reactUsers);
 };
