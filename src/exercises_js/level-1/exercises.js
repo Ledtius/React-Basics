@@ -1,26 +1,19 @@
 export const PracticeJS = () => {
-  const products = [
-    { id: 1, name: "Laptop", price: 1200 },
-    { id: 2, name: "Phone", price: 800 },
-    { id: 3, name: "Mouse", price: 25 },
-    { id: 4, name: "Monitor", price: 300 },
-    { id: 5, name: "Keyboard", price: 100 },
+  const employees = [
+    { name: "Alice", salary: 3000 },
+    { name: "Bob", salary: 2800 },
+    { name: "Charlie", salary: 3500 },
+    { name: "Diana", salary: 4000 },
   ];
 
-  // ✅ Filter the products with a price greater than 100
-  // ✅ Return a new array with only the product names in UPPERCASE
+  // ✅ Use reduce to calculate the total salary
+  // ✅ Use object destructuring inside the reduce callback
 
-  const productsGreaterThanHundred = products.filter((product) => {
-    if (product.price > 100) {
-      return product;
-    }
-  });
+  const totalSalary = employees.reduce((acc, employee) => {
+    const { name, salary } = employee;
 
-  console.log(productsGreaterThanHundred);
+    return acc + salary;
+  }, 0);
 
-  const productsUC = products.map((product) => {
-    return { ...product, name: product.name.toUpperCase() };
-  });
-
-  console.log(productsUC);
+  console.log(totalSalary);
 };
