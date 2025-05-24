@@ -1,20 +1,18 @@
 export const PracticeJS = () => {
-  const posts = [
-    { id: 1, title: "Intro to JS", tags: ["js", "programming", "web"] },
-    { id: 2, title: "React Basics", tags: ["react", "js", "web"] },
-    { id: 3, title: "CSS Tricks", tags: ["css", "design"] },
+  const clients = [
+    { id: 1, name: "Alice" },
+    { id: 2, name: "Bob" },
+    { id: 3, name: "Charlie" },
   ];
 
-  // ✅ Create a new array with all the unique tags (no duplicates)
-  // Hint: combine flat() + Set
+  // ✅ Add a new property "status: 'active'" to each client
+  // ✅ Do NOT modify the original
 
-  const tags = [...new Set(posts.map((post) => post.tags).flat())];
+  const duplicateClients = clients.map((client) => ({
+    ...clients,
+    status: "active",
+  }));
 
-  console.log(tags);
-  //   const tags = posts.map((post) => post.tags).flat();
-
-  //   const tagsNoneRepeat = tags.filter(
-  //     (tagName, index, array) => index === array.indexOf(tagName)
-  //   );
-  //   console.log(tagsNoneRepeat);
+  console.log(clients);
+  console.log(duplicateClients);
 };
