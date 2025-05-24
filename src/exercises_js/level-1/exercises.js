@@ -1,16 +1,9 @@
 export const PracticeJS = () => {
-  const colors = ["red", "blue", "green", "yellow", "purple"];
+  const numbers = [10, 20, 30, 40, 50, 60];
 
-  console.log(colors);
-  // 1. Remove the first element
-  colors.shift();
-  console.log(colors);
+  // Create a new array that contains only the elements from index 2 to 4 (inclusive)
 
-  // 2. Remove the last element
-  colors.pop();
-  // 3. Print the final array
-  console.log(colors);
+  const newNumbers = numbers.splice(2, 3);
 
-
-  
+  console.log(newNumbers);
 };
