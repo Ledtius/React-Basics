@@ -1,8 +1,25 @@
 export const PracticeJS = () => {
-  const scores = [67, 89, 94, 76, 82];
+  const company = {
+    name: "TechCorp",
+    employees: [
+      {
+        name: "Alice",
+        role: "Engineer",
+        skills: ["HTML", "CSS"],
+      },
+      {
+        name: "Bob",
+        role: "Manager",
+        skills: ["Communication", "Planning"],
+      },
+    ],
+  };
 
-  // Use `some()` to check if there is any score higher than 90
-  const greaterThanNinety = scores.some((score) => score > 90);
+  // 1. Add "JavaScript" to Alice's skills
+  company["employees"][0]["skills"].push("JavaScript");
 
-  console.log(greaterThanNinety);
+  console.log(company.employees[0].skills);
+
+  // 2. Print Bob's second skill
+  console.log(company.employees[1].skills[1]);
 };
