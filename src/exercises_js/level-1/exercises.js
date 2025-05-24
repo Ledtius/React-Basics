@@ -1,9 +1,8 @@
 export const PracticeJS = () => {
-  const animals = ["dog", "cat", "panda", "koala", "wolf"];
+  const scores = [67, 89, 94, 76, 82];
 
-  // Create a new array with animals whose name ends with "a"
+  // Use `some()` to check if there is any score higher than 90
+  const greaterThanNinety = scores.some((score) => score > 90);
 
-  const animalsEndedALetter = animals.filter((animal) => animal.endsWith("a"));
-
-  console.log(animalsEndedALetter);
+  console.log(greaterThanNinety);
 };
