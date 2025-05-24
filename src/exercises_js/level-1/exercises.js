@@ -1,25 +1,13 @@
 export const PracticeJS = () => {
-  const company = {
-    name: "TechCorp",
-    employees: [
-      {
-        name: "Alice",
-        role: "Engineer",
-        skills: ["HTML", "CSS"],
-      },
-      {
-        name: "Bob",
-        role: "Manager",
-        skills: ["Communication", "Planning"],
-      },
-    ],
-  };
+  const team = [
+    { name: "Emma", role: "Designer" },
+    { name: "Liam", role: "Developer" },
+    { name: "Olivia", role: "Project Manager" },
+  ];
 
-  // 1. Add "JavaScript" to Alice's skills
-  company["employees"][0]["skills"].push("JavaScript");
+  // Create a new array with only the names
 
-  console.log(company.employees[0].skills);
+  const teamNames = team.map((member) => member.name);
 
-  // 2. Print Bob's second skill
-  console.log(company.employees[1].skills[1]);
+  console.log(teamNames);
 };
