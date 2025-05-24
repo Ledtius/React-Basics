@@ -1,19 +1,20 @@
 export const PracticeJS = () => {
-  const employees = [
-    { name: "Alice", salary: 3000 },
-    { name: "Bob", salary: 2800 },
-    { name: "Charlie", salary: 3500 },
-    { name: "Diana", salary: 4000 },
+  const posts = [
+    { id: 1, title: "Intro to JS", tags: ["js", "programming", "web"] },
+    { id: 2, title: "React Basics", tags: ["react", "js", "web"] },
+    { id: 3, title: "CSS Tricks", tags: ["css", "design"] },
   ];
 
-  // ✅ Use reduce to calculate the total salary
-  // ✅ Use object destructuring inside the reduce callback
+  // ✅ Create a new array with all the unique tags (no duplicates)
+  // Hint: combine flat() + Set
 
-  const totalSalary = employees.reduce((acc, employee) => {
-    const { name, salary } = employee;
+  const tags = [...new Set(posts.map((post) => post.tags).flat())];
 
-    return acc + salary;
-  }, 0);
+  console.log(tags);
+  //   const tags = posts.map((post) => post.tags).flat();
 
-  console.log(totalSalary);
+  //   const tagsNoneRepeat = tags.filter(
+  //     (tagName, index, array) => index === array.indexOf(tagName)
+  //   );
+  //   console.log(tagsNoneRepeat);
 };
