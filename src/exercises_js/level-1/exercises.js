@@ -1,12 +1,9 @@
 export const PracticeJS = () => {
-  const numbers = [2, 5, 6, 8, 11, 14, 17, 20];
+  const flags = [true, false, true, true, false, false, true];
 
-  // Use reduce to count how many even numbers are in the array
+  // Use reduce to count how many `true` values are in the array
 
-  const countNumbers = numbers.reduce((acc, number, index, array) => {
-    number % 2 === 0 ? acc++ : 0;
-    return acc;
-  }, 0);
+  const trueCounter = flags.reduce((acc, value) => acc + (value || 0), 0);
 
-  console.log(countNumbers);
+  console.log(trueCounter);
 };
