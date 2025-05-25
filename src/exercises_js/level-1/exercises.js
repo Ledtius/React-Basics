@@ -1,18 +1,12 @@
 export const PracticeJS = () => {
-  const purchases = [
-    { name: "Phone", price: 900, quantity: 2 },
-    { name: "Mouse", price: 50, quantity: 3 },
-    { name: "Monitor", price: 300, quantity: 1 },
-  ];
+  const techStack = ["js", "html", "js", "css", "js", "html", "css"];
 
-  // ✅ Create a new array with: { name, totalPrice }
-  // ✅ totalPrice = price * quantity
+  // ✅ Return an object that counts how many times each technology appears
+  // ✅ Result should look like: { js: 3, html: 2, css: 2 }
 
-  const totalPricePurchases = purchases.map((purchase) => {
-    const { name, price, quantity } = purchase;
-
-    return { name: name, ["totalPrice"]: quantity * price };
-  });
-
-  console.log(totalPricePurchases);
+  const techCounter = techStack.reduce((acc, tech) => {
+    acc[tech] = acc[tech] ? acc[tech] + 1 : 1;
+    // I received help in this exercise
+    return acc;
+  }, {});
 };
