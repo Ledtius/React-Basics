@@ -1,21 +1,19 @@
 export const PracticeJS = () => {
-  const people = [
-    { name: "Anna", age: 30 },
-    { name: "Bob", age: 25 },
-    { name: "Carla", age: 30 },
-    { name: "David", age: 25 },
-    { name: "Eva", age: 35 },
+  const products = [
+    { name: "Laptop", category: "tech" },
+    { name: "Shoes", category: "fashion" },
+    { name: "Phone", category: "tech" },
+    { name: "T-shirt", category: "fashion" },
+    { name: "Tablet", category: "tech" },
   ];
 
-  // Return an object like: { 25: 2, 30: 2, 35: 1 }
+  // Return an object like: { tech: 3, fashion: 2 }
 
-  const peopleByAge = people.reduce((acc, person) => {
-    const { name, age } = person;
+  const productsDistribution = products.reduce((acc, { category }) => {
+    acc[category] = (acc[category] ?? 0) + 1;
 
-    if (acc[age]) acc[age]++;
-    else acc[age] = 1;
     return acc;
   }, {});
 
-  console.log(peopleByAge);
+  console.log(productsDistribution);
 };
