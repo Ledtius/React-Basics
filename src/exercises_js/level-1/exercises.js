@@ -1,12 +1,12 @@
 export const PracticeJS = () => {
-  const techStack = ["js", "html", "js", "css", "js", "html", "css"];
+  const numbers = [2, 5, 6, 8, 11, 14, 17, 20];
 
-  // ✅ Return an object that counts how many times each technology appears
-  // ✅ Result should look like: { js: 3, html: 2, css: 2 }
+  // Use reduce to count how many even numbers are in the array
 
-  const techCounter = techStack.reduce((acc, tech) => {
-    acc[tech] = acc[tech] ? acc[tech] + 1 : 1;
-    // I received help in this exercise
+  const countNumbers = numbers.reduce((acc, number, index, array) => {
+    number % 2 === 0 ? acc++ : 0;
     return acc;
-  }, {});
+  }, 0);
+
+  console.log(countNumbers);
 };
