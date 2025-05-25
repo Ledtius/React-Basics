@@ -1,9 +1,24 @@
 export const PracticeJS = () => {
-  const flags = [true, false, true, true, false, false, true];
+  const letters = ["a", "b", "a", "c", "b", "a"];
 
-  // Use reduce to count how many `true` values are in the array
+  // Return an object like: { a: 3, b: 2, c: 1 }
 
-  const trueCounter = flags.reduce((acc, value) => acc + (value || 0), 0);
+  const counterLetters = letters.reduce((acc, letter) => {
+    if (acc[letter]) acc[letter]++;
+    else acc[letter] = 1;
+    return acc;
+  }, {});
+  const counterLetters2 = letters.reduce((acc, letter) => {
+    acc[letter] = acc[letter] ? acc[letter] + 1 : 1;
 
-  console.log(trueCounter);
+    return acc;
+  }, {});
+  const counterLetters3 = letters.reduce((acc, letter) => {
+    acc[letter] = (acc[letter] ?? 0) + 1;
+    return acc;
+  }, {});
+
+  console.log(counterLetters);
+  console.log(counterLetters2);
+  console.log(counterLetters3);
 };
