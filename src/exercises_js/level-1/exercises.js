@@ -1,14 +1,18 @@
 export const PracticeJS = () => {
-  const users = [
-    { name: "Daniel", skills: ["HTML", "CSS", "React"] },
-    { name: "Sophia", skills: ["Python", "Django"] },
-    { name: "Liam", skills: ["JavaScript", "React", "Node.js"] },
+  const purchases = [
+    { name: "Phone", price: 900, quantity: 2 },
+    { name: "Mouse", price: 50, quantity: 3 },
+    { name: "Monitor", price: 300, quantity: 1 },
   ];
 
-  // ✅ Filter users who have "React" in their skills
-  // ✅ Return a new array with objects: { name, totalSkills }
+  // ✅ Create a new array with: { name, totalPrice }
+  // ✅ totalPrice = price * quantity
 
-  const reactUsers = users.filter((user) => user.skills.includes("React"));
+  const totalPricePurchases = purchases.map((purchase) => {
+    const { name, price, quantity } = purchase;
 
-  console.log(reactUsers);
+    return { name: name, ["totalPrice"]: quantity * price };
+  });
+
+  console.log(totalPricePurchases);
 };
