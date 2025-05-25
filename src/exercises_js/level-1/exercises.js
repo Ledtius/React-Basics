@@ -1,24 +1,21 @@
 export const PracticeJS = () => {
-  const letters = ["a", "b", "a", "c", "b", "a"];
+  const people = [
+    { name: "Anna", age: 30 },
+    { name: "Bob", age: 25 },
+    { name: "Carla", age: 30 },
+    { name: "David", age: 25 },
+    { name: "Eva", age: 35 },
+  ];
 
-  // Return an object like: { a: 3, b: 2, c: 1 }
+  // Return an object like: { 25: 2, 30: 2, 35: 1 }
 
-  const counterLetters = letters.reduce((acc, letter) => {
-    if (acc[letter]) acc[letter]++;
-    else acc[letter] = 1;
+  const peopleByAge = people.reduce((acc, person) => {
+    const { name, age } = person;
+
+    if (acc[age]) acc[age]++;
+    else acc[age] = 1;
     return acc;
   }, {});
-  const counterLetters2 = letters.reduce((acc, letter) => {
-    acc[letter] = acc[letter] ? acc[letter] + 1 : 1;
 
-    return acc;
-  }, {});
-  const counterLetters3 = letters.reduce((acc, letter) => {
-    acc[letter] = (acc[letter] ?? 0) + 1;
-    return acc;
-  }, {});
-
-  console.log(counterLetters);
-  console.log(counterLetters2);
-  console.log(counterLetters3);
+  console.log(peopleByAge);
 };
