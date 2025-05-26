@@ -7,7 +7,7 @@ export const PracticeJS = () => {
 
   // 4. Use optional chaining to print each user's email safely (if exists).
 
-  userProfiles.forEach(({ contact }) => {
-    console.log(contact?.email);
+  userProfiles.forEach((user) => {
+    console.log(user?.contact?.email);
   });
 };
