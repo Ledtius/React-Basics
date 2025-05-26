@@ -6,22 +6,15 @@ export const PracticeJS = () => {
   ];
 
   // Return an object like: { js: 2, html: 2, css: 2 }
-  const separateSkills = [];
 
-  const counterOfSkills = users.reduce((acc, user, index, array) => {
-    const { skills } = user;
+  const allSeparateSkills = users.map((user) => user.skills).flat(users.length);
 
-    if (index <= array.length) separateSkills.push(skills);
-    // console.log(separateSkills);
-    if (separateSkills.length >= array.length) {
-      const skillsInGroup = separateSkills.flat(separateSkills.length);
-      console.log(skillsInGroup);
+  console.log(allSeparateSkills);
 
-      /* Estoy viendo que fuera mas facil que lo fuera hecho con .map y .flat primero :/ */
-    }
-
+  const skillGroup = allSeparateSkills.reduce((acc, skill) => {
+    acc[skill] = (acc[skill] ?? 0) + 1;
     return acc;
   }, {});
 
-  console.log(counterOfSkills);
+  console.log(skillGroup);
 };
