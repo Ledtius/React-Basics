@@ -1,20 +1,22 @@
 export const PracticeJS = () => {
-  const fruits = [
-    { id: 1, name: "Apple", color: "red" },
-    { id: 2, name: "Banana", color: "yellow" },
-    { id: 3, name: "Grape", color: "purple" },
+  const languages = [
+    "JavaScript",
+    "Python",
+    "Java",
+    "JavaScript",
+    "Python",
+    "C++",
   ];
 
-  // 1. Create a new Map where the key is the fruit's id and the value is the fruit's name.
+  // 2. Create a Set from the array to remove duplicates.
+  // 3. Convert the Set back to an array.
 
-  const fruitsMap = new Map();
+  const languagesSet = new Set(languages);
+  const languagesNoRepeat2 = [...new Set(languages)];
 
-  fruits.forEach((fruit) => {
-    const { id, name } = fruit;
-    fruitsMap.set(id, name);
-  });
+  console.log(languagesNoRepeat2);
 
-  if (fruitsMap.size === fruits.length) console.log(fruitsMap);
+  const languagesNoRepeat = [...languagesSet];
 
-  console.log(fruitsMap.size);
+  console.log(languagesNoRepeat);
 };
