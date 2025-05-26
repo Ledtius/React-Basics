@@ -1,13 +1,13 @@
 export const PracticeJS = () => {
-  const userProfiles = [
-    { id: 1, name: "Alice", contact: { email: "alice@mail.com" } },
-    { id: 2, name: "Bob" }, // no contact
-    { id: 3, name: "Carol", contact: { email: "carol@mail.com" } },
+  const settings = [
+    { theme: "dark", fontSize: 14 },
+    { theme: null, fontSize: 16 },
+    { fontSize: 12 }, // no theme property
   ];
 
-  // 4. Use optional chaining to print each user's email safely (if exists).
+  // 5. For each setting, get the theme or fallback to "light" using nullish coalescing.
 
-  userProfiles.forEach((user) => {
-    console.log(user?.contact?.email);
-  });
+  const themesAvailable = settings.map((setting) => setting?.theme ?? "light");
+
+  console.log(themesAvailable);
 };
