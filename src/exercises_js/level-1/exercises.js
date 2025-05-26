@@ -1,22 +1,13 @@
 export const PracticeJS = () => {
-  const languages = [
-    "JavaScript",
-    "Python",
-    "Java",
-    "JavaScript",
-    "Python",
-    "C++",
+  const userProfiles = [
+    { id: 1, name: "Alice", contact: { email: "alice@mail.com" } },
+    { id: 2, name: "Bob" }, // no contact
+    { id: 3, name: "Carol", contact: { email: "carol@mail.com" } },
   ];
 
-  // 2. Create a Set from the array to remove duplicates.
-  // 3. Convert the Set back to an array.
+  // 4. Use optional chaining to print each user's email safely (if exists).
 
-  const languagesSet = new Set(languages);
-  const languagesNoRepeat2 = [...new Set(languages)];
-
-  console.log(languagesNoRepeat2);
-
-  const languagesNoRepeat = [...languagesSet];
-
-  console.log(languagesNoRepeat);
+  userProfiles.forEach(({ contact }) => {
+    console.log(contact?.email);
+  });
 };
