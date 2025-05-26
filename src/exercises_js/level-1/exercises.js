@@ -1,20 +1,20 @@
 export const PracticeJS = () => {
-  const users = [
-    { name: "Alice", skills: ["js", "html"] },
-    { name: "Bob", skills: ["css", "html"] },
-    { name: "Carol", skills: ["js", "css"] },
+  const fruits = [
+    { id: 1, name: "Apple", color: "red" },
+    { id: 2, name: "Banana", color: "yellow" },
+    { id: 3, name: "Grape", color: "purple" },
   ];
 
-  // Return an object like: { js: 2, html: 2, css: 2 }
+  // 1. Create a new Map where the key is the fruit's id and the value is the fruit's name.
 
-  const allSeparateSkills = users.map((user) => user.skills).flat(users.length);
+  const fruitsMap = new Map();
 
-  console.log(allSeparateSkills);
+  fruits.forEach((fruit) => {
+    const { id, name } = fruit;
+    fruitsMap.set(id, name);
+  });
 
-  const skillGroup = allSeparateSkills.reduce((acc, skill) => {
-    acc[skill] = (acc[skill] ?? 0) + 1;
-    return acc;
-  }, {});
+  if (fruitsMap.size === fruits.length) console.log(fruitsMap);
 
-  console.log(skillGroup);
+  console.log(fruitsMap.size);
 };
