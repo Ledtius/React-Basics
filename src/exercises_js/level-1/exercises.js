@@ -1,19 +1,27 @@
 export const PracticeJS = () => {
-  const products = [
-    { name: "Laptop", category: "tech" },
-    { name: "Shoes", category: "fashion" },
-    { name: "Phone", category: "tech" },
-    { name: "T-shirt", category: "fashion" },
-    { name: "Tablet", category: "tech" },
+  const users = [
+    { name: "Alice", skills: ["js", "html"] },
+    { name: "Bob", skills: ["css", "html"] },
+    { name: "Carol", skills: ["js", "css"] },
   ];
 
-  // Return an object like: { tech: 3, fashion: 2 }
+  // Return an object like: { js: 2, html: 2, css: 2 }
+  const separateSkills = [];
 
-  const productsDistribution = products.reduce((acc, { category }) => {
-    acc[category] = (acc[category] ?? 0) + 1;
+  const counterOfSkills = users.reduce((acc, user, index, array) => {
+    const { skills } = user;
+
+    if (index <= array.length) separateSkills.push(skills);
+    // console.log(separateSkills);
+    if (separateSkills.length >= array.length) {
+      const skillsInGroup = separateSkills.flat(separateSkills.length);
+      console.log(skillsInGroup);
+
+      /* Estoy viendo que fuera mas facil que lo fuera hecho con .map y .flat primero :/ */
+    }
 
     return acc;
   }, {});
 
-  console.log(productsDistribution);
+  console.log(counterOfSkills);
 };
