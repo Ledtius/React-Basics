@@ -1,13 +1,11 @@
 export const PracticeJS = () => {
-  const settings = [
-    { theme: "dark", fontSize: 14 },
-    { theme: null, fontSize: 16 },
-    { fontSize: 12 }, // no theme property
-  ];
+  const product = { name: "Laptop", price: 999.99, stock: 10 };
 
-  // 5. For each setting, get the theme or fallback to "light" using nullish coalescing.
+  // 6. Create a string using template literals: "The Laptop costs $999.99 and there are 10 in stock."
 
-  const themesAvailable = settings.map((setting) => setting?.theme ?? "light");
+  const { name, price, stock } = product;
 
-  console.log(themesAvailable);
+  console.log(
+    `The ${name}, cost: ${price} and there are ${stock} in the stock`
+  );
 };
