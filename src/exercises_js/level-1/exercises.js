@@ -1,11 +1,15 @@
 export const PracticeJS = () => {
-  const product = { name: "Laptop", price: 999.99, stock: 10 };
+  const name = "John";
+  const age = 28;
 
-  // 6. Create a string using template literals: "The Laptop costs $999.99 and there are 10 in stock."
+  // 7. Create an object with shorthand property names for name and age.
 
-  const { name, price, stock } = product;
+  const user = { name, age };
 
-  console.log(
-    `The ${name}, cost: ${price} and there are ${stock} in the stock`
-  );
+  console.log(user);
+  // 8. Create a function that returns this object using shorthand syntax.
+
+  const greeting = () => ({ name, age });
+
+  console.log(greeting());
 };
