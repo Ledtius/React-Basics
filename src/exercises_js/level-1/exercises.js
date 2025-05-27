@@ -1,15 +1,12 @@
 export const PracticeJS = () => {
-  const name = "John";
-  const age = 28;
+  function greet(name = "Guest") {
+    return `Hello, ${name}!`;
 
-  // 7. Create an object with shorthand property names for name and age.
+    // 9. Make this function print "Hello, <name>!" where name is the parameter, or "Guest" if no argument passed.
+  }
 
-  const user = { name, age };
+  // 10. Call greet with and without argument.
 
-  console.log(user);
-  // 8. Create a function that returns this object using shorthand syntax.
-
-  const greeting = () => ({ name, age });
-
-  console.log(greeting());
+  console.log(greet());
+  console.log(greet("Calet"));
 };
