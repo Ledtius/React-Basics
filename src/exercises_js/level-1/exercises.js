@@ -1,61 +1,52 @@
 export const PracticeJS = () => {
   const survey = [
     { id: 1, name: "Carlos", answers: { q1: "Yes", q2: "No", q3: "Yes" } },
+
     { id: 2, name: "Ana", answers: { q1: "Yes", q2: "Yes", q3: "No" } },
+
     { id: 3, name: "Lucía", answers: { q1: "No", q2: "Yes", q3: "Yes" } },
   ];
 
-  /* 
-  1. Use `reduce` to count how many times "Yes" was answered per question.  
-    Expected result:
-    
-    ```js
-    { q1: 2, q2: 2, q3: 2 }
-    ```
-    
-2. Use `Object.entries` + `map` to create strings like:  
-    `"Carlos: Yes, No, Yes"`
-    
-3. Create a function with **default parameters** that allows adding new responses to the array.
-  
-  */
-
-  const yesCounterAnswers = survey.reduce((acc, { answers }, index) => {
-    const keysA = Object.keys(answers);
-
-    const valuesA = Object.values(answers);
-
-    if (keysA[0]) {
-      console.log(index);
-      if (valuesA[0] === "Yes") {
-        acc[keysA[0]] = (acc[keysA[0]] || 0) + 1;
-      }
-      if (valuesA[1] === "Yes") {
-        acc[keysA[1]] = (acc[keysA[1]] || 0) + 1;
-      }
-      if (valuesA[2] === "Yes") {
-        acc[keysA[2]] = (acc[keysA[2]] || 0) + 1;
-      }
+  /* 1 */
+  const countYesAnswers = survey.reduce((acc, { answers }) => {
+    for (const [key, value] of Object.entries(answers)) {
+      console.log(key, value);
+      if (value === "Yes") acc[key] = (acc[key] || 0) + 1;
     }
 
     return acc;
   }, {});
 
-  console.log(yesCounterAnswers);
+  console.log(countYesAnswers);
 
-  const answerPerPerson = survey.map(
-    ({ name, answers }) => `${name}: ${Object.values(answers)}`
-  );
-  console.log(answerPerPerson);
+  /* 2 */
 
-  const addResponse = (q4 = "Yes") => {
-    return survey.map(({ answers }) => {
-      answers["q4"] = q4;
-      return answers;
-    });
+  const viewAnswers = survey.map(({ name, answers }) => {
+    // console.log(name, answers);
+    const onlyAnswers = Object.values(answers).join(" ,");
+    console.log(onlyAnswers);
 
-    // console.log(answersSurvey);
+    return `${name}: ${onlyAnswers}`;
+  });
+
+  console.log(viewAnswers);
+
+  /* 3 */
+
+  const addNewResponse = (question = "q4", answer = "Yes") => {
+    let newSurveyQuestion = [...survey].map(({ id, name, answers }) => ({
+      id,
+      name,
+      ["answers"]: { ...answers, [`${question}`]: answer },
+    }));
+
+    // newSurveyQuestion = newSurveyQuestion.map((element) => {
+    //   element.answers[question] = answer;
+    //   return element;
+    // });
+
+    return newSurveyQuestion;
   };
 
-  console.log(addResponse("No"));
+  console.log(addNewResponse("q100", "No"));
 };
