@@ -1,52 +1,99 @@
 export const PracticeJS = () => {
-  const survey = [
-    { id: 1, name: "Carlos", answers: { q1: "Yes", q2: "No", q3: "Yes" } },
-
-    { id: 2, name: "Ana", answers: { q1: "Yes", q2: "Yes", q3: "No" } },
-
-    { id: 3, name: "Lucía", answers: { q1: "No", q2: "Yes", q3: "Yes" } },
+  const pets = [
+    { owner: "Pedro", type: "dog", name: "Rex" },
+    { owner: "Juan", type: "cat", name: "Michi" },
+    { owner: "Pedro", type: "parrot", name: "Loro" },
+    { owner: "Lucía", type: "dog", name: "Firulais" },
   ];
 
+  /* 1. Create a `Map` where each key is an owner’s name and the value is an array of pet names.
+    
+2. Create a `Set` with the unique pet types.
+    
+3. Generate an array of objects like:
+    
+
+```js
+{ owner: "Pedro", petsCount: 2 }
+```
+
+Use `reduce`. */
+
   /* 1 */
-  const countYesAnswers = survey.reduce((acc, { answers }) => {
-    for (const [key, value] of Object.entries(answers)) {
-      console.log(key, value);
-      if (value === "Yes") acc[key] = (acc[key] || 0) + 1;
+
+  let ownersAndPets = Object.values(
+    pets.map(({ owner, name }) => ({ [`${owner}`]: name }))
+  );
+
+  console.log(ownersAndPets);
+
+  /* 2 */
+
+  const transformToArray = Object.values(
+    pets.map(({ owner, name }) => [owner, name])
+  )
+    .map(([name, pet], index, array) => [name, [pet]])
+    .flat();
+
+  console.log(transformToArray);
+
+  const onlyNames = [
+    ...new Set(
+      transformToArray.filter((element) => typeof element === "string")
+    ),
+  ];
+
+  console.log(onlyNames);
+
+  const combinePets = transformToArray.map((element, index, array) => {
+    if (typeof element === "string") {
+      // console.log(element);
+
+      // for (let index = 0; index < onlyNames.length; index++) {
+      //   const element = onlyNames[index];
+      //   console.log(element);
+
+      // }
+      // console.log(onlyNames.indexOf(element));
+      console.log(array.indexOf(onlyNames[1]) );
     }
+  });
+
+  // const combinePets = transformToArray.map(([name, arrayPet], index, array) => {
+  //   console.log(name);
+  //   console.log(array[index]);
+  //   console.log(array[index].indexOf(name));
+  // });
+
+  /* 3 */
+
+  const counterNames = pets.reduce((acc, { owner }) => {
+    acc[owner] = (acc[owner] || 0) + 1;
 
     return acc;
   }, {});
 
-  console.log(countYesAnswers);
+  console.log(counterNames);
 
-  /* 2 */
+  const noRepeatNames = [...new Set(pets.map(({ owner }) => owner))];
 
-  const viewAnswers = survey.map(({ name, answers }) => {
-    // console.log(name, answers);
-    const onlyAnswers = Object.values(answers).join(" ,");
-    console.log(onlyAnswers);
+  const transformToObject = noRepeatNames.map((name) => ({
+    owner: name,
+  }));
 
-    return `${name}: ${onlyAnswers}`;
-  });
+  console.log(transformToObject);
 
-  console.log(viewAnswers);
+  let counterPerOwner;
 
-  /* 3 */
+  const onlyCount = Object.values(counterNames).map((value) => value);
 
-  const addNewResponse = (question = "q4", answer = "Yes") => {
-    let newSurveyQuestion = [...survey].map(({ id, name, answers }) => ({
-      id,
-      name,
-      ["answers"]: { ...answers, [`${question}`]: answer },
-    }));
+  console.log(onlyCount);
 
-    // newSurveyQuestion = newSurveyQuestion.map((element) => {
-    //   element.answers[question] = answer;
-    //   return element;
-    // });
+  counterPerOwner = transformToObject.map(({ owner }, index) => ({
+    owner,
+    petsCount: onlyCount[index],
+  }));
+  // console.log(value);
 
-    return newSurveyQuestion;
-  };
-
-  console.log(addNewResponse("q100", "No"));
+  console.log(counterPerOwner);
 };
