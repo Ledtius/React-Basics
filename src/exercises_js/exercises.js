@@ -1,17 +1,11 @@
 export const PracticeJS = () => {
-  const product = {
-    name: "Laptop",
-    price: 1200,
-    specs: {
-      cpu: "Intel i7",
-      ram: "16GB",
-    },
-  };
+  const users = [
+    { name: "Ana", age: 25 },
+    { name: "Luis", age: 30 },
+    { name: "Karen", age: 22 },
+  ];
 
-  const {
-    price,
-    specs: { cpu, ram },
-  } = product;
-
-  console.log(price, cpu, ram);
+  for (const { name, age } of users) {
+    console.log(`${name} is ${age} years old`);
+  }
 };
