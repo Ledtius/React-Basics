@@ -1,15 +1,9 @@
 export const PracticeJS = () => {
-  const user = {
-    name: "Calet",
-    age: 23,
-    city: "Barrancabermeja",
-    isStudent: true,
-  };
+  const fruits = ["banana", "apple", "orange"];
 
-  console.log(user.name);
-  user["city"] = "Medellín";
-  console.log(user.city);
+  console.log(fruits[0]);
 
-  user.pets = ["Randy"];
-  console.log(user["pets"]);
+  fruits.push("pineapple");
+  fruits.shift();
+  console.log(fruits);
 };
