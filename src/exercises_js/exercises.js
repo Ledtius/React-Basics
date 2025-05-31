@@ -1,8 +1,18 @@
 export const PracticeJS = () => {
-  const frontendSkills = ["HTML", "CSS", "JavaScript"];
-  const learning = ["JavaScript", "React", "Tailwind"];
+  const developers = [
+    {
+      name: "Juan",
+      skills: ["HTML", "CSS", "JavaScript"],
+    },
+    {
+      name: "Laura",
+      skills: ["JavaScript", "React", "Tailwind"],
+    },
+  ];
 
-  const newFrontendSkills = [...new Set(frontendSkills.concat(learning))];
+  const allSkills = [
+    ...new Set(developers.map(({ skills }) => skills).flat()),
+  ].join("♥, ");
 
-  console.log(newFrontendSkills);
+  console.log(`The developers domain: ${allSkills}`);
 };
