@@ -1,9 +1,17 @@
 export const PracticeJS = () => {
-  const fruits = ["banana", "apple", "orange"];
+  const product = {
+    name: "Laptop",
+    price: 1200,
+    specs: {
+      cpu: "Intel i7",
+      ram: "16GB",
+    },
+  };
 
-  console.log(fruits[0]);
+  const {
+    price,
+    specs: { cpu, ram },
+  } = product;
 
-  fruits.push("pineapple");
-  fruits.shift();
-  console.log(fruits);
+  console.log(price, cpu, ram);
 };
