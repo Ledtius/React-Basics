@@ -8,4 +8,8 @@ export const PracticeJS = () => {
   for (const { name, age } of users) {
     console.log(`${name} is ${age} years old`);
   }
+
+  const onlyNames = users.map(({ name }) => name);
+
+  console.log(onlyNames);
 };
