@@ -1,18 +1,14 @@
 export const PracticeJS = () => {
-  const developers = [
-    {
-      name: "Juan",
-      skills: ["HTML", "CSS", "JavaScript"],
-    },
-    {
-      name: "Laura",
-      skills: ["JavaScript", "React", "Tailwind"],
-    },
-  ];
+  const result = separateId({
+    id: 99,
+    name: "Calet",
+    level: "Beginner",
+  });
 
-  const allSkills = [
-    ...new Set(developers.map(({ skills }) => skills).flat()),
-  ].join("♥, ");
+  function separateId({ id, ...rest }) {
+    return { data: rest };
+  }
 
-  console.log(`The developers domain: ${allSkills}`);
+  console.log(result);
+  // → { data: { name: "Calet", level: "Beginner" } }
 };
