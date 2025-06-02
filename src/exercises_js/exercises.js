@@ -1,9 +1,17 @@
 export const PracticeJS = () => {
-  console.log(splitFirstAndRest([10, 20, 30, 40]));
+  console.log(groupByType(1, "hello", true, 99, "world", false));
+  /* → {
+  number: [1, 99],
+  string: ["hello", "world"],
+  boolean: [true, false]
+} */
 
-  function splitFirstAndRest(nums) {
-    const [first, ...others] = nums;
-    return { first, others };
+  function groupByType(...values) {
+    return values.reduce((acc, value) => {
+      const type = typeof value;
+      if (!acc[type]) acc[type] = [];
+      acc[type].push(value);
+      return acc;
+    }, {});
   }
-  // → { first: 10, others: [20, 30, 40] }
 };
