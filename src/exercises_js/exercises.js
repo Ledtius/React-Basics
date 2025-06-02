@@ -1,9 +1,15 @@
 export const PracticeJS = () => {
-  console.log(countExtras("first", 1, 2, 3)); // → 3
+  const products = [{ id: 1, name: "Mouse" }];
+  const newProduct = { id: 2, name: "Keyboard" };
 
-  function countExtras(text, ...extras) {
-    console.log(extras);
-    return extras.length;
+  function addProduct(products, newProduct) {
+    return Object.assign({}, ...products, newProduct );
+    // return [...products, newProduct];
   }
-  console.log(countExtras("onlyOne")); // → 0
+
+  console.log(addProduct(products, newProduct));
+  // → [
+  //   { id: 1, name: "Mouse" },
+  //   { id: 2, name: "Keyboard" }
+  // ]
 };
