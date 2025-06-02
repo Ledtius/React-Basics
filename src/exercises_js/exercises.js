@@ -1,14 +1,9 @@
 export const PracticeJS = () => {
-  const result = separateId({
-    id: 99,
-    name: "Calet",
-    level: "Beginner",
-  });
+  console.log(countExtras("first", 1, 2, 3)); // → 3
 
-  function separateId({ id, ...rest }) {
-    return { data: rest };
+  function countExtras(text, ...extras) {
+    console.log(extras);
+    return extras.length;
   }
-
-  console.log(result);
-  // → { data: { name: "Calet", level: "Beginner" } }
+  console.log(countExtras("onlyOne")); // → 0
 };
