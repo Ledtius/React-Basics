@@ -1,15 +1,9 @@
 export const PracticeJS = () => {
-  const products = [{ id: 1, name: "Mouse" }];
-  const newProduct = { id: 2, name: "Keyboard" };
+  console.log(splitFirstAndRest([10, 20, 30, 40]));
 
-  function addProduct(products, newProduct) {
-    return Object.assign({}, ...products, newProduct );
-    // return [...products, newProduct];
+  function splitFirstAndRest(nums) {
+    const [first, ...others] = nums;
+    return { first, others };
   }
-
-  console.log(addProduct(products, newProduct));
-  // → [
-  //   { id: 1, name: "Mouse" },
-  //   { id: 2, name: "Keyboard" }
-  // ]
+  // → { first: 10, others: [20, 30, 40] }
 };
