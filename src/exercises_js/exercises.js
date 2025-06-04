@@ -1,13 +1,12 @@
 export const PracticeJS = () => {
-  const original = {
-    task: "Learn JS",
-    completed: false,
-  };
+  // 👉 Write a function called `sumAll` that takes any number of arguments
+  // and returns the total sum.
 
-  // 👉 Create a copy of `original` using the spread operator
-  // and update `completed` to true in the new object without modifying the original.
+  function sumAll(...nums) {
+    return nums.reduce((acc, num) => acc + num, 0);
+  }
 
-  const clone = { ...original, completed: true };
-
-  console.log(clone);
+  // Example:
+  console.log(sumAll(2, 4, 6)); // 12
+  console.log(sumAll(1, 1, 1, 1, 1)); // 5
 };
