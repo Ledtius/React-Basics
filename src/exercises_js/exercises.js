@@ -1,11 +1,13 @@
 export const PracticeJS = () => {
-  // Given the following array:
-  const rgb = [255, 100, 50];
+  const original = {
+    task: "Learn JS",
+    completed: false,
+  };
 
-  // 👉 Use array destructuring to assign values to variables red, green, blue
-  // and log: "Red: 255, Green: 100, Blue: 50"
+  // 👉 Create a copy of `original` using the spread operator
+  // and update `completed` to true in the new object without modifying the original.
 
-  const [red, green, blue] = rgb;
+  const clone = { ...original, completed: true };
 
-  console.log(`Red: ${red}, Green: ${green}, Blue: ${blue}`);
+  console.log(clone);
 };
