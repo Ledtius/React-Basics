@@ -1,17 +1,11 @@
 export const PracticeJS = () => {
-  // Given the following object:
-  const user = {
-    name: "Calet",
-    age: 23,
-    country: "Colombia",
-  };
+  // Given the following array:
+  const rgb = [255, 100, 50];
 
-  // 👉 Use destructuring to extract each value and log them in a sentence like:
-  // "My name is Calet, I'm 23 years old and I live in Colombia."
+  // 👉 Use array destructuring to assign values to variables red, green, blue
+  // and log: "Red: 255, Green: 100, Blue: 50"
 
-  const { name, age, country } = user;
-  
-  console.log(
-    `My name is ${name}, I'm ${age} years old and I live in ${country}`
-  );
+  const [red, green, blue] = rgb;
+
+  console.log(`Red: ${red}, Green: ${green}, Blue: ${blue}`);
 };
