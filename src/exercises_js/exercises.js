@@ -1,13 +1,22 @@
 export const PracticeJS = () => {
-  const users = [
-    { id: 1, username: "Alice", password: "123", email: "a@a.com" },
-    { id: 2, username: "Bob", password: "456", email: "b@b.com" },
-    { id: 3, username: "Calet", password: "789", email: "c@c.com" },
-  ];
+  const userInfo = {
+    name: "Calet",
+    age: 23,
+    city: "Barrancabermeja",
+    isActive: true,
+    verified: false,
+    level: 5,
+  };
 
-  function sanitizeUsers(users) {
-    return users.map(({ password, ...info }) => info);
+  function countTypes(obj) {
+    let objTypes = {};
+    for (const key in obj) {
+      const type = typeof obj[key];
+      objTypes[type] = objTypes[type] ? objTypes[type] + 1 : 1;
+    }
+    return  objTypes;
   }
 
-  console.log(sanitizeUsers(users));
+  console.log(countTypes(userInfo));
+  // Expected output: { string: 2, number: 2, boolean: 2 }
 };
