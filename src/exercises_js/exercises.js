@@ -1,18 +1,28 @@
 export const PracticeJS = () => {
-  const fruits = ["apple", "banana", "apple", "orange", "banana", "banana"];
+  const users = [
+    { name: "Ana", city: "Bogotá", isActive: true },
+    { name: "Luis", city: "Medellín", isActive: false },
+    { name: "María", city: "Bogotá", isActive: true },
+    { name: "Pedro", city: "Cali", isActive: true },
+    { name: "Sofía", city: "Medellín", isActive: true },
+  ];
 
-  function countItems(array) {
-    let countFruits = {};
+  /* reduce */
 
-    for (const element of array) {
-      countFruits[element] = countFruits[element]
-        ? countFruits[element] + 1
-        : 1;
-    }
+  const reduceVersion = users.reduce((acc, { city, isActive }) => {
+    if (isActive) acc[city] = acc[city] ? acc[city] + 1 : 1;
 
-    return countFruits;
+    return acc;
+  }, {});
+
+  console.log(reduceVersion);
+
+  /* for of  */
+  const forOfVersion = {};
+
+  for (const { city, isActive } of users) {
+    if (isActive)
+      forOfVersion[city] = forOfVersion[city] ? forOfVersion[city] + 1 : 1;
   }
-
-  console.log(countItems(fruits));
-  // Expected output: { apple: 2, banana: 3, orange: 1 }
+  console.log(forOfVersion);
 };
