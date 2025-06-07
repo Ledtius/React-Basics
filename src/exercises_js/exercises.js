@@ -1,22 +1,18 @@
 export const PracticeJS = () => {
-  const userInfo = {
-    name: "Calet",
-    age: 23,
-    city: "Barrancabermeja",
-    isActive: true,
-    verified: false,
-    level: 5,
-  };
+  const fruits = ["apple", "banana", "apple", "orange", "banana", "banana"];
 
-  function countTypes(obj) {
-    let objTypes = {};
-    for (const key in obj) {
-      const type = typeof obj[key];
-      objTypes[type] = objTypes[type] ? objTypes[type] + 1 : 1;
+  function countItems(array) {
+    let countFruits = {};
+
+    for (const element of array) {
+      countFruits[element] = countFruits[element]
+        ? countFruits[element] + 1
+        : 1;
     }
-    return  objTypes;
+
+    return countFruits;
   }
 
-  console.log(countTypes(userInfo));
-  // Expected output: { string: 2, number: 2, boolean: 2 }
+  console.log(countItems(fruits));
+  // Expected output: { apple: 2, banana: 3, orange: 1 }
 };
