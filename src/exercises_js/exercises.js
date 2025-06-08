@@ -1,64 +1,45 @@
 export const PracticeJS = () => {
-  const users = [
-    {
-      name: "Ana",
-      preferences: {
-        theme: "dark",
-        notifications: true,
-      },
-    },
-    {
-      name: "Luis",
-      preferences: {
-        theme: "light",
-        notifications: false,
-      },
-    },
-    {
-      name: "María",
-      preferences: {
-        theme: "dark",
-        notifications: true,
-      },
-    },
-    {
-      name: "Pedro",
-      preferences: null, // este caso debe evitar errores
-    },
+  // Use reduce to group items by their type.
+  const items = [
+    { name: "Banana", type: "fruit" },
+    { name: "Carrot", type: "vegetable" },
+    { name: "Apple", type: "fruit" },
   ];
 
-  // Expected output:
-  // { darkTheme: 2, notificationsOn: 2 }
+  console.log(
+    items.reduce(
+      (acc, { name, type }) => {
+        // console.log(name, type);
 
-  const userInformation = (arrayUsers) => {
-    const info = { darkTheme: 0, notificationsOn: 0 };
-    for (const user of arrayUsers) {
-      if (user.preferences) {
-        const { theme, notifications } = user?.preferences;
+        // /* Aqui pasa algo raro */
+        // if (type === "fruit") {
+        //   console.log(type);
+        //   console.log(name);
+        //   // console.log(acc[type]);
+        //   acc[type] = acc[type] ? (acc[type] = [...acc[type], name]) : [name];
+        //   console.log(acc[type]);
+        // } else {
+        //   acc[type] = acc[type] ? acc[type].push(name) : [name];
+        // }
 
-        const { darkTheme, notificationsOn } = info;
+        /* Por que no toma el valor inicial que se indico que tendria la propiedad fruit en  el objeto acc?, ademas cuando hago acc.fruit.push(...) me marca un error, pero  si defino de nuevo acc.fruit = [] si me permite hacer el push. */
+        // acc.fruit = [];
+        if (type === "fruit") acc.fruit.push(name);
 
-        // info.notificationsOn = info.notificationsOn + (notifications ?? 0);
+        // acc.vegetable =
+        //   type === "vegetable" ? acc.vegetable.push(name) : acc.vegetable;
 
-        /* Es raro que no pueda simplemente escribir notificationesOn + notifications pero si notificationsOn + true o false, es como si a la hora de hacer una comparacion con un operador logico, notifications se transformara su valor original, bueno, en el caso de que usemos el operador Nullish Coalesing */
+        return acc;
+      },
+      { fruit: [] }
+    )
+  );
 
-        info.notificationsOn = info.notificationsOn + notifications;
-
-        /* Al parecer si se puede, de seguro escribi algo mal en el codigo y le adjudique el error a dicho acontecimiento */
-
-        // info.notificationsOn = notifications
-        //   ? info.notificationsOn + notifications
-        //   : info.notificationsOn;
-
-        if (theme === "dark") info.darkTheme += 1;
-
-        // info.darkTheme = theme === "dark" ? info.darkTheme++ : info.darkTheme;
-      }
-
-      // console.log(user.preferences);
-    }
-    return info;
-  };
-
-  console.log(userInformation(users));
+  /*
+Expected output:
+{
+  fruit: ["Banana", "Apple"],
+  vegetable: ["Carrot"]
+}
+*/
 };
